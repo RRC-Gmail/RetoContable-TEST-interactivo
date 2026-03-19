@@ -1102,7 +1102,7 @@
         <div class="don-balance-emoji">🧮</div>
         <div class="title-main">EL GRAN RETO CONTABLE</div>
         <div class="subtitle">40 preguntas · 5 rondas · Don Balance al mando</div>
-        <div style="font-size:13px; opacity:0.8; margin-top:2px; margin-bottom:10px; color:#ecc94b; font-weight:bold;">v12</div>
+        <div style="font-size:13px; opacity:0.8; margin-top:2px; margin-bottom:10px; color:#ecc94b; font-weight:bold;">v13</div>
         <div class="rounds-grid">
             <div class="round-card">
                 <span class="emoji">📚</span>
@@ -1179,6 +1179,9 @@
         <div class="round-transition-topic" id="roundTopic">Tema</div>
         <div id="roundDonQuote" style="margin-top:20px; font-style:italic; opacity:0.9; max-width:500px; text-align:center;"></div>
         <button class="action-button" id="roundStartBtn" style="margin-top:25px; padding:15px 40px; font-size:18px; background:linear-gradient(45deg,#667eea,#764ba2); color:white; border:none; border-radius:12px; cursor:pointer;">▶️ COMENZAR RONDA</button>
+        <div class="nav-shortcuts" style="margin-top:20px;">
+            <button class="nav-btn nav-btn-danger" onclick="confirmEndQuiz()">⏹ Finalizar programa</button>
+        </div>
     </div>
 </div>
 
@@ -1536,12 +1539,6 @@ function showTeacherQuestion() {
     const q = QUESTIONS[appState.currentQuestion];
     if (!q) {
         showFinalResults();
-        return;
-    }
-
-    // Check if we need to show round transition
-    if (appState.currentQuestion > 0 && QUESTIONS[appState.currentQuestion - 1].ronda !== q.ronda) {
-        showRoundTransition(q.ronda);
         return;
     }
 
