@@ -81,14 +81,14 @@
         }
 
         .screen {
-            display: none;
+            display: none !important;
             width: 100%;
             height: 100%;
             flex-direction: column;
         }
 
         .screen.active {
-            display: flex;
+            display: flex !important;
         }
 
         /* ============= START SCREEN (TEACHER PORTADA) ============= */
@@ -1393,15 +1393,14 @@
                 </div>
             </div>
 
-            <!-- STUDENT RESULT SCREEN -->
+            <!-- STUDENT RESULT SCREEN (simplificado - resultados se ven en la pantalla del profesor) -->
             <div id="studentResult" class="screen student-voting">
-                <div class="student-result-message" id="resultMessage"></div>
-                <div style="padding: 20px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; margin-bottom: 20px;">
-                    <div style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Respuesta correcta:</div>
-                    <div id="correctAnswerText" style="font-size: 18px; line-height: 1.6;"></div>
+                <div style="text-align: center; padding: 40px;">
+                    <div style="font-size: 60px; margin-bottom: 20px;" id="studentResultEmoji">⏳</div>
+                    <div style="font-size: 22px; font-weight: bold; margin-bottom: 10px;" id="resultMessage">Voto registrado</div>
+                    <div style="font-size: 16px; color: #a0aec0;">Mira la pantalla del profesor para ver los resultados y la explicación</div>
+                    <div style="margin-top: 30px; font-size: 14px; color: #718096;">Esperando siguiente pregunta...</div>
                 </div>
-                <div class="student-explanation-preview" id="explanationPreview"></div>
-                <div class="student-waiting-message">Esperando siguiente pregunta...</div>
             </div>
 
             <!-- FINAL RESULTS SCREEN (Teacher & Student) -->
@@ -1471,16 +1470,16 @@
                 </div>
             </div>
 
-            <!-- PERSONAL STATS SCREEN (Student Final) -->
+            <!-- PERSONAL STATS SCREEN (Student Final - simplificado) -->
             <div id="studentFinal" class="screen student-voting">
                 <div style="text-align: center; padding: 40px;">
-                    <div style="font-size: 80px; margin-bottom: 20px;">🏆</div>
-                    <h1 style="font-size: 36px; margin-bottom: 20px;">Tu puntuación</h1>
-                    <div style="font-size: 48px; font-weight: bold; color: #e53e3e; margin-bottom: 30px;">
+                    <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+                    <h1 style="font-size: 28px; margin-bottom: 15px;">¡Misión completada!</h1>
+                    <div style="font-size: 40px; font-weight: bold; color: #e53e3e; margin-bottom: 20px;">
                         <span id="studentFinalScore">0</span>/40
                     </div>
-                    <div style="font-size: 24px; color: #cbd5e0; margin-bottom: 20px;" id="studentFinalMessage"></div>
-                    <div id="studentRoundBreakdown" style="margin: 30px 0;"></div>
+                    <div style="font-size: 18px; color: #cbd5e0; margin-bottom: 15px;" id="studentFinalMessage"></div>
+                    <div style="font-size: 15px; color: #718096;">Mira la pantalla del profesor para ver el ranking y las estadísticas completas</div>
                 </div>
             </div>
         </div>
@@ -2726,33 +2725,27 @@
             const q = QUESTIONS[appState.currentQuestion];
             const isCorrect = appState.studentVote === q.correcta;
 
+            const emoji = document.getElementById('studentResultEmoji');
             const message = document.getElementById('resultMessage');
-            message.classList.remove('correct', 'incorrect');
+
             if (isCorrect) {
-                message.classList.add('correct');
-                message.innerHTML = '✓ ¡CORRECTO!';
+                emoji.textContent = '✅';
+                message.textContent = '¡Voto registrado!';
             } else {
-                message.classList.add('incorrect');
-                message.innerHTML = '✗ Respuesta incorrecta';
+                emoji.textContent = '📨';
+                message.textContent = '¡Voto registrado!';
             }
-
-            document.getElementById('correctAnswerText').textContent = `${String.fromCharCode(65 + q.correcta)}) ${q.opciones[q.correcta]}`;
-
-            const preview = q.explicacion.substring(0, 150) + (q.explicacion.length > 150 ? '...' : '');
-            document.getElementById('explanationPreview').textContent = preview;
+            // No mostramos si acertó o no — eso lo ve en la pantalla del profesor
         }
 
         function showStudentFinalStats() {
-            const allStudents = appState.allStudents || {};
             const allVotes = appState.allVotes || {};
             let myScore = 0;
-            const myByRound = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
 
             QUESTIONS.forEach((q, idx) => {
                 const vote = allVotes[idx] && allVotes[idx][appState.currentUser];
                 if (vote && vote.vote === q.correcta) {
                     myScore++;
-                    myByRound[q.ronda]++;
                 }
             });
 
@@ -2760,30 +2753,12 @@
 
             const percent = Math.round((myScore / 40) * 100);
             let message = '';
-            if (percent >= 90) message = '¡CAMPEÓN! ¡Eres un genio contable! 🎉';
-            else if (percent >= 70) message = '¡Excelente! ¡Muy buen trabajo! 👏';
-            else if (percent >= 50) message = 'Buen esfuerzo. Sigue practicando. 💪';
-            else if (percent >= 30) message = 'Necesitas estudiar más. ¡Vamos! 📚';
-            else message = 'Hay que volver a los libros. 📖';
+            if (percent >= 90) message = '¡Increíble! 🎉';
+            else if (percent >= 70) message = '¡Muy bien! 👏';
+            else if (percent >= 50) message = '¡Buen trabajo! 💪';
+            else message = '¡Sigue practicando! 📚';
 
             document.getElementById('studentFinalMessage').textContent = message;
-
-            const breakdown = document.getElementById('studentRoundBreakdown');
-            breakdown.innerHTML = `
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
-                    ${[1, 2, 3, 4, 5].map(round => {
-                        const roundQuestions = QUESTIONS.filter(q => q.ronda === round).length;
-                        const percent = Math.round((myByRound[round] / roundQuestions) * 100);
-                        return `
-                            <div style="padding: 15px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; text-align: center;">
-                                <div style="font-size: 24px; margin-bottom: 8px;">${ROUNDS[round].emoji}</div>
-                                <div style="font-size: 14px; color: #cbd5e0;">${myByRound[round]}/${roundQuestions}</div>
-                                <div style="font-size: 12px; color: #a0aec0;">${percent}%</div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            `;
 
             showScreen('studentFinal');
         }
