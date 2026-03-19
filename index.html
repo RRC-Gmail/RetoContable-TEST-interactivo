@@ -20,9 +20,18 @@
             width: 100%;
             height: 100%;
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0f0a1e 0%, #1a1233 100%);
-            color: #f7fafc;
+            background: #f8f9fa;
+            color: #1a202c;
+        }
+
+        .teacher-screen {
             overflow: hidden;
+        }
+
+        .student-voting,
+        .registration-screen,
+        .waiting-screen {
+            overflow-y: auto;
         }
 
         /* ============= ANIMATIONS ============= */
@@ -48,12 +57,12 @@
 
         @keyframes greenGlow {
             0%, 100% {
-                box-shadow: 0 0 10px rgba(56, 161, 105, 0.5),
-                            inset 0 0 10px rgba(56, 161, 105, 0.2);
+                box-shadow: 0 0 10px rgba(56, 161, 105, 0.3),
+                            inset 0 0 10px rgba(56, 161, 105, 0.1);
             }
             50% {
-                box-shadow: 0 0 20px rgba(56, 161, 105, 0.8),
-                            inset 0 0 15px rgba(56, 161, 105, 0.3);
+                box-shadow: 0 0 20px rgba(56, 161, 105, 0.5),
+                            inset 0 0 15px rgba(56, 161, 105, 0.2);
             }
         }
 
@@ -139,7 +148,7 @@
 
         .subtitle-main {
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             text-align: center;
             margin-bottom: 6px;
         }
@@ -154,12 +163,13 @@
 
         .round-card-simple {
             padding: 8px 10px;
-            background: rgba(255, 255, 255, 0.08);
+            background: #f0f1f3;
             border: 2px solid transparent;
             border-radius: 8px;
             text-align: center;
             min-width: 80px;
             animation: slideInUp 0.4s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .round-card-simple .emoji {
@@ -169,20 +179,21 @@
 
         .round-card-simple .name {
             font-size: 11px;
-            color: #cbd5e0;
+            color: #4a5568;
         }
 
         .speech-bubble {
             max-width: 500px;
             margin: 8px 0;
             padding: 12px 16px;
-            background: rgba(229, 62, 62, 0.15);
+            background: #fce4e4;
             border: 2px solid #e53e3e;
             border-radius: 12px;
             font-size: 14px;
             font-style: italic;
             animation: slideInUp 0.6s ease-out;
             line-height: 1.5;
+            color: #2d3748;
         }
 
         .qr-section {
@@ -197,6 +208,7 @@
             border-radius: 8px;
             animation: breathe 3s infinite;
             margin: 8px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .qr-code-container img {
@@ -208,17 +220,17 @@
         .qr-instructions {
             margin: 6px 0;
             font-size: 15px;
-            color: #cbd5e0;
+            color: #4a5568;
         }
 
         .student-url {
             margin: 6px 0;
             padding: 8px;
-            background: rgba(229, 62, 62, 0.1);
+            background: #fce4e4;
             border-radius: 6px;
             font-family: monospace;
             font-size: 11px;
-            color: #e2e8f0;
+            color: #7c2d2d;
             word-break: break-all;
             max-width: 320px;
             margin-left: auto;
@@ -228,18 +240,18 @@
         .students-connected {
             margin-top: 8px;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
-            backdrop-filter: blur(10px);
             max-height: 180px;
             overflow-y: auto;
             width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .students-header {
             font-size: 14px;
             font-weight: bold;
-            color: #e2e8f0;
+            color: #2d3748;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -254,24 +266,26 @@
             font-size: 12px;
             font-weight: bold;
             margin-left: 5px;
+            color: white;
         }
 
         .student-item {
             padding: 5px 10px;
-            background: rgba(102, 126, 234, 0.2);
-            border-left: 3px solid #667eea;
+            background: #e6f2ff;
+            border-left: 3px solid #3182ce;
             border-radius: 4px;
             font-size: 13px;
             margin-bottom: 4px;
             animation: slideInLeft 0.4s ease-out;
+            color: #2d3748;
         }
 
         .players-counter {
             font-size: 22px;
             font-weight: bold;
-            color: #f6e05e;
+            color: #e53e3e;
             margin: 10px 0;
-            text-shadow: 0 0 10px rgba(246, 224, 94, 0.3);
+            text-shadow: none;
         }
 
         /* ============= REGISTRATION SCREEN (STUDENT) ============= */
@@ -281,16 +295,18 @@
             align-items: center;
             justify-content: center;
             gap: 30px;
-            padding: 40px;
+            padding: 20px;
+            background: #f8f9fa;
         }
 
         .registration-card {
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.08);
+            padding: 40px 20px;
+            background: white;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             max-width: 500px;
+            width: 90vw;
             animation: slideInUp 0.6s ease-out;
         }
 
@@ -306,7 +322,7 @@
 
         .registration-subtitle {
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             margin-bottom: 30px;
         }
 
@@ -314,40 +330,41 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
+            flex-direction: column;
         }
 
         .input-field {
             padding: 15px;
             font-size: 16px;
-            border: 2px solid #667eea;
+            border: 2px solid #cbd5e0;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            backdrop-filter: blur(10px);
-            flex: 1;
+            background: white;
+            color: #2d3748;
+            width: 100%;
         }
 
         .input-field.short {
-            flex: 0 0 80px;
+            max-width: 100px;
+            align-self: center;
         }
 
         .input-field::placeholder {
-            color: #cbd5e0;
+            color: #a0aec0;
         }
 
         .input-field:focus {
             outline: none;
             border-color: #e53e3e;
-            background: rgba(229, 62, 62, 0.1);
+            background: #fce4e4;
         }
 
         .error-message {
             padding: 12px;
-            background: rgba(229, 62, 62, 0.2);
+            background: #fed7d7;
             border: 2px solid #e53e3e;
             border-radius: 8px;
             font-size: 14px;
-            color: #fc8181;
+            color: #7c2d2d;
             margin-bottom: 20px;
             display: none;
             animation: slideInUp 0.3s ease-out;
@@ -359,11 +376,11 @@
 
         .success-message {
             padding: 12px;
-            background: rgba(56, 161, 105, 0.2);
+            background: #c6f6d5;
             border: 2px solid #38a169;
             border-radius: 8px;
             font-size: 14px;
-            color: #9ae6b4;
+            color: #22543d;
             margin-bottom: 20px;
             display: none;
             animation: slideInUp 0.3s ease-out;
@@ -380,7 +397,8 @@
             align-items: center;
             justify-content: center;
             gap: 40px;
-            padding: 40px;
+            padding: 40px 20px;
+            background: #f8f9fa;
         }
 
         .waiting-card {
@@ -397,11 +415,12 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #2d3748;
         }
 
         .waiting-subtext {
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             margin-bottom: 30px;
         }
 
@@ -409,6 +428,7 @@
             font-size: 24px;
             letter-spacing: 5px;
             animation: pulse 1.5s infinite;
+            color: #4a5568;
         }
 
         /* ============= TEACHER SCREENS ============= */
@@ -421,15 +441,15 @@
             align-items: center;
             gap: 15px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .progress-bar {
             flex: 1;
             height: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             border-radius: 4px;
             overflow: hidden;
         }
@@ -443,7 +463,7 @@
 
         .progress-text {
             font-size: 14px;
-            color: #e2e8f0;
+            color: #4a5568;
             min-width: 80px;
         }
 
@@ -473,7 +493,7 @@
 
         .round-description {
             font-size: 20px;
-            color: #cbd5e0;
+            color: #4a5568;
             max-width: 600px;
             text-align: center;
         }
@@ -488,13 +508,14 @@
 
         .question-card {
             padding: 25px;
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
             font-size: 26px;
             font-weight: bold;
             line-height: 1.6;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            color: #2d3748;
         }
 
         .round-info-badge {
@@ -503,11 +524,22 @@
             gap: 10px;
             margin-bottom: 15px;
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
         }
 
         .round-info-badge .emoji {
             font-size: 20px;
+        }
+
+        .difficulty-indicator {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 10px;
+        }
+
+        .difficulty-star {
+            color: #ecc94b;
+            font-size: 14px;
         }
 
         .question-number {
@@ -533,10 +565,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-out;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             display: flex;
             align-items: flex-start;
             gap: 15px;
+            color: #2d3748;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .option-card:nth-child(1) { border-color: #e53e3e; }
@@ -549,7 +583,15 @@
             font-weight: bold;
             min-width: 30px;
             text-align: center;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: white;
         }
+
+        .option-card:nth-child(1) .option-letter { background: #e53e3e; }
+        .option-card:nth-child(2) .option-letter { background: #3182ce; }
+        .option-card:nth-child(3) .option-letter { background: #ecc94b; color: #2d3748; }
+        .option-card:nth-child(4) .option-letter { background: #38a169; }
 
         .option-text {
             flex: 1;
@@ -559,7 +601,7 @@
 
         .option-card:hover:not(.disabled) {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
         .option-card.disabled {
@@ -568,23 +610,24 @@
         }
 
         .option-card.correct {
-            background: rgba(56, 161, 105, 0.2);
+            background: #c6f6d5;
             animation: greenGlow 1s ease-out;
         }
 
         .option-card.incorrect {
-            background: rgba(229, 62, 62, 0.1);
+            background: #fed7d7;
             opacity: 0.6;
         }
 
         .vote-counter {
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             text-align: center;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
             margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         /* ============= RESULTS SCREEN ============= */
@@ -598,10 +641,11 @@
 
         .results-question {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             border-radius: 12px;
             margin-bottom: 10px;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .results-grid {
@@ -615,8 +659,10 @@
             padding: 20px;
             border: 3px solid;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             animation: fadeIn 0.5s ease-out;
+            color: #2d3748;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .result-option:nth-child(1) { border-color: #e53e3e; }
@@ -625,7 +671,7 @@
         .result-option:nth-child(4) { border-color: #38a169; }
 
         .result-option.correct {
-            background: rgba(56, 161, 105, 0.15);
+            background: #c6f6d5;
             animation: greenGlow 0.6s ease-out;
         }
 
@@ -639,6 +685,7 @@
             align-items: center;
             margin-bottom: 10px;
             font-weight: bold;
+            color: #2d3748;
         }
 
         .result-indicator {
@@ -649,7 +696,7 @@
         .result-bar {
             width: 100%;
             height: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             border-radius: 4px;
             overflow: hidden;
             margin-bottom: 8px;
@@ -657,19 +704,19 @@
 
         .result-bar-fill {
             height: 100%;
-            background: rgba(102, 126, 234, 0.5);
+            background: #667eea;
             width: 0%;
             transition: width 0.5s ease;
         }
 
         .result-stats {
             font-size: 14px;
-            color: #cbd5e0;
+            color: #4a5568;
         }
 
         .don-balance-reaction {
             padding: 20px;
-            background: rgba(229, 62, 62, 0.1);
+            background: #fce4e4;
             border: 2px solid #e53e3e;
             border-radius: 8px;
             margin: 20px 0;
@@ -677,6 +724,7 @@
             font-style: italic;
             line-height: 1.6;
             animation: slideInUp 0.5s ease-out;
+            color: #2d3748;
         }
 
         /* ============= EXPLANATION SCREEN ============= */
@@ -686,20 +734,20 @@
             gap: 20px;
             padding: 20px;
             overflow-y: auto;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(229, 62, 62, 0.08) 100%);
+            background: #f8f9fa;
         }
 
         .explanation-header {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             animation: slideInUp 0.5s ease-out;
         }
 
         .explanation-question-info {
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -733,27 +781,43 @@
 
         .summary-bar:nth-child(1) { background: #e53e3e; }
         .summary-bar:nth-child(2) { background: #3182ce; }
-        .summary-bar:nth-child(3) { background: #ecc94b; color: #0f0a1e; }
+        .summary-bar:nth-child(3) { background: #ecc94b; color: #2d3748; }
         .summary-bar:nth-child(4) { background: #38a169; }
 
         .correct-answer-banner {
             padding: 15px;
-            background: rgba(56, 161, 105, 0.2);
+            background: #c6f6d5;
             border: 2px solid #38a169;
             border-radius: 8px;
-            color: #9ae6b4;
+            color: #22543d;
             font-weight: bold;
             text-align: center;
             animation: slideInUp 0.5s ease-out;
         }
 
+        .graphic-container {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .graphic-container svg,
+        .graphic-container .graphic-item {
+            max-width: 100%;
+            height: auto;
+        }
+
         .explanation-content {
             padding: 30px;
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             border-left: 5px solid #e53e3e;
             border-radius: 8px;
-            backdrop-filter: blur(10px);
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .explanation-icon {
@@ -768,23 +832,24 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            color: #2d3748;
         }
 
         .explanation-text {
             font-size: 20px;
             line-height: 1.8;
-            color: #e2e8f0;
+            color: #2d3748;
             margin-bottom: 20px;
         }
 
         .don-balance-comment {
             padding: 15px;
-            background: rgba(229, 62, 62, 0.15);
+            background: #fce4e4;
             border-left: 3px solid #e53e3e;
             border-radius: 6px;
             font-size: 16px;
             font-style: italic;
-            color: #cbd5e0;
+            color: #2d3748;
             margin-top: 15px;
             animation: slideInUp 0.5s ease-out;
         }
@@ -796,16 +861,17 @@
             gap: 20px;
             padding: 20px;
             justify-content: center;
+            background: #f8f9fa;
         }
 
         .student-question-card {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
             text-align: center;
             margin-bottom: 20px;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .student-round-info {
@@ -815,7 +881,7 @@
             gap: 10px;
             margin-bottom: 10px;
             font-size: 14px;
-            color: #cbd5e0;
+            color: #4a5568;
         }
 
         .student-round-info .emoji {
@@ -826,6 +892,7 @@
             font-size: 22px;
             font-weight: bold;
             line-height: 1.6;
+            color: #2d3748;
         }
 
         .student-options {
@@ -844,11 +911,14 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             text-align: left;
             display: flex;
             align-items: center;
             gap: 15px;
+            color: #2d3748;
+            min-height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .student-option-btn:nth-child(1) { border-color: #e53e3e; }
@@ -858,12 +928,12 @@
 
         .student-option-btn:hover:not(.voted):not(.disabled) {
             transform: translateX(10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
         .student-option-btn.voted {
             opacity: 1;
-            background: rgba(255, 255, 255, 0.1);
+            background: #f0f1f3;
         }
 
         .student-option-btn.disabled {
@@ -876,7 +946,15 @@
             font-weight: bold;
             min-width: 40px;
             text-align: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
         }
+
+        .student-option-btn:nth-child(1) .student-option-letter { background: #e53e3e; }
+        .student-option-btn:nth-child(2) .student-option-letter { background: #3182ce; }
+        .student-option-btn:nth-child(3) .student-option-letter { background: #ecc94b; color: #2d3748; }
+        .student-option-btn:nth-child(4) .student-option-letter { background: #38a169; }
 
         .student-option-text {
             flex: 1;
@@ -884,10 +962,10 @@
 
         .student-voted-message {
             padding: 15px;
-            background: rgba(56, 161, 105, 0.2);
+            background: #c6f6d5;
             border: 2px solid #38a169;
             border-radius: 8px;
-            color: #9ae6b4;
+            color: #22543d;
             text-align: center;
             font-weight: bold;
             animation: slideInUp 0.5s ease-out;
@@ -895,12 +973,13 @@
 
         .student-waiting-message {
             padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
             text-align: center;
             font-size: 16px;
-            color: #cbd5e0;
+            color: #4a5568;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .student-result-message {
@@ -914,27 +993,28 @@
         }
 
         .student-result-message.correct {
-            background: rgba(56, 161, 105, 0.2);
+            background: #c6f6d5;
             border: 2px solid #38a169;
-            color: #9ae6b4;
+            color: #22543d;
         }
 
         .student-result-message.incorrect {
-            background: rgba(229, 62, 62, 0.2);
+            background: #fed7d7;
             border: 2px solid #e53e3e;
-            color: #fc8181;
+            color: #7c2d2d;
         }
 
         .student-explanation-preview {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
             margin: 20px 0;
             font-size: 14px;
-            color: #cbd5e0;
+            color: #2d3748;
             line-height: 1.6;
             max-height: 150px;
             overflow-y: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         /* ============= FINAL RESULTS SCREEN ============= */
@@ -959,13 +1039,40 @@
             max-width: 700px;
             margin: 30px auto;
             padding: 20px;
-            background: rgba(229, 62, 62, 0.15);
+            background: #fce4e4;
             border: 2px solid #e53e3e;
             border-radius: 12px;
             font-size: 18px;
             font-style: italic;
             line-height: 1.6;
             text-align: center;
+            color: #2d3748;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .button-primary {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(229, 62, 62, 0.3);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(229, 62, 62, 0.4);
         }
 
         .stats-grid {
@@ -977,16 +1084,16 @@
 
         .stat-card {
             padding: 25px;
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             border-radius: 12px;
             text-align: center;
-            backdrop-filter: blur(10px);
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .stat-label {
             font-size: 14px;
-            color: #cbd5e0;
+            color: #4a5568;
             margin-bottom: 10px;
         }
 
@@ -1001,28 +1108,29 @@
             max-width: 600px;
             margin: 30px auto;
             border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
             overflow: hidden;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .ranking-table th {
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             padding: 15px;
             text-align: left;
             font-weight: bold;
-            color: #e2e8f0;
+            color: #2d3748;
         }
 
         .ranking-table td {
             padding: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #cbd5e0;
+            border-top: 1px solid #e2e8f0;
+            color: #2d3748;
         }
 
         .ranking-table tr:hover {
-            background: rgba(102, 126, 234, 0.1);
+            background: #f0f1f3;
         }
 
         .medal {
@@ -1033,13 +1141,14 @@
         .chart-container {
             margin: 30px 0;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             border-radius: 8px;
             display: flex;
             justify-content: space-around;
             align-items: flex-end;
             min-height: 300px;
             animation: slideInUp 0.5s ease-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .bar-group {
@@ -1057,110 +1166,62 @@
         }
 
         .bar-label {
-            font-size: 24px;
+            font-size: 14px;
+            color: #2d3748;
         }
 
-        .bar-percent {
+        .nav-button {
+            padding: 8px 16px;
+            background: #f0f1f3;
+            color: #2d3748;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            cursor: pointer;
             font-size: 14px;
             font-weight: bold;
-            color: #e2e8f0;
+            transition: all 0.2s ease;
         }
 
-        /* ============= BUTTONS ============= */
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
+        .nav-button:hover {
+            background: #e2e8f0;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #e53e3e, #9b2c2c);
-            color: white;
-            min-height: 50px;
-            font-size: 18px;
+        .nav-button.back-btn {
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(229, 62, 62, 0.3);
-        }
+        @media (max-width: 768px) {
+            .registration-card {
+                padding: 20px;
+                width: 90vw;
+            }
 
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+            .form-group {
+                flex-direction: column;
+            }
 
-        #startBtn:not(:disabled) {
-            animation: greenGlow 2s infinite;
-            background: linear-gradient(135deg, #38a169, #276749);
-            font-size: 20px;
-        }
+            .input-field {
+                width: 100%;
+            }
 
-        .btn-secondary {
-            background: rgba(102, 126, 234, 0.3);
-            color: #cbd5e0;
-            border: 2px solid #667eea;
-        }
+            .input-field.short {
+                max-width: 100%;
+            }
 
-        .btn-secondary:hover {
-            background: rgba(102, 126, 234, 0.5);
-            transform: translateY(-2px);
-        }
+            .student-option-btn {
+                padding: 15px;
+                min-height: 60px;
+                font-size: 16px;
+            }
 
-        .btn-success {
-            background: linear-gradient(135deg, #38a169, #22543d);
-            color: white;
-        }
-
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(56, 161, 105, 0.3);
-        }
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .button-group button {
-            flex: 1;
-        }
-
-        .button-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        /* ============= MOBILE RESPONSIVE ============= */
-        @media (max-width: 1024px) {
             .start-screen-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
             }
 
-            .start-left, .start-right {
-                padding: 20px;
-            }
-
-            .title-main {
-                font-size: 40px;
-            }
-
-            .don-balance-emoji-large {
-                font-size: 80px;
-            }
-
-            .qr-code-container img {
-                width: 200px;
-                height: 200px;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
 
             .options-grid {
@@ -1171,8 +1232,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .student-question-text {
+                font-size: 18px;
             }
         }
     </style>
@@ -1180,136 +1241,119 @@
 <body>
     <div id="app">
         <div class="container">
-            <!-- REGISTRATION SCREEN (Student) -->
-            <div id="studentRegistration" class="screen registration-screen">
-                <div class="registration-card">
-                    <div class="don-balance-emoji-large">🧮</div>
-                    <h1 class="registration-title">¡Bienvenido!</h1>
-                    <p class="registration-subtitle">Entra al reto contable</p>
-
-                    <div id="errorMessage" class="error-message"></div>
-                    <div id="successMessage" class="success-message"></div>
-
-                    <form id="registrationForm" onsubmit="registerStudent(event)">
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                id="studentName"
-                                class="input-field"
-                                placeholder="Tu nombre"
-                                maxlength="30"
-                                required
-                            />
-                            <input
-                                type="text"
-                                id="studentInitial"
-                                class="input-field short"
-                                placeholder="Inicial"
-                                maxlength="1"
-                                required
-                                oninput="this.value = this.value.toUpperCase()"
-                            />
-                        </div>
-                        <button type="submit" class="btn-primary">🚀 UNIRME A LA MISIÓN</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- START SCREEN (Teacher Portada) -->
-            <div id="teacherStart" class="screen teacher-screen">
+            <!-- START SCREEN (TEACHER) -->
+            <div class="screen start-screen teacher-screen active">
                 <div class="start-screen-grid">
-                    <!-- LEFT SIDE -->
                     <div class="start-left">
                         <div class="don-balance-intro">
-                            <div class="don-balance-emoji-large">🧮</div>
+                            <div class="don-balance-emoji-large">👨‍💼</div>
+                            <h1 class="title-main">El Gran Reto Contable</h1>
+                            <p class="subtitle-main">40 preguntas · 5 rondas · Don Balance al mando</p>
                         </div>
-                        <h1 class="title-main">EL GRAN RETO CONTABLE</h1>
-                        <p class="subtitle-main">40 preguntas · 5 rondas · Don Balance al mando</p>
+
+                        <div style="margin: 20px 0;">
+                            <div class="speech-bubble" id="donBalanceStart"></div>
+                        </div>
 
                         <div class="rounds-display">
                             <div class="round-card-simple">
                                 <div class="emoji">📚</div>
-                                <div class="name">Principios</div>
+                                <div class="name">Ronda 1</div>
                             </div>
                             <div class="round-card-simple">
                                 <div class="emoji">📋</div>
-                                <div class="name">Ciclo</div>
+                                <div class="name">Ronda 2</div>
                             </div>
                             <div class="round-card-simple">
                                 <div class="emoji">⚖️</div>
-                                <div class="name">Balance</div>
+                                <div class="name">Ronda 3</div>
                             </div>
                             <div class="round-card-simple">
                                 <div class="emoji">📊</div>
-                                <div class="name">Cuentas</div>
+                                <div class="name">Ronda 4</div>
                             </div>
                             <div class="round-card-simple">
                                 <div class="emoji">🔍</div>
-                                <div class="name">Análisis</div>
+                                <div class="name">Ronda 5</div>
                             </div>
                         </div>
 
-                        <div class="speech-bubble" id="startSpeech"></div>
-
-                        <div class="players-counter" id="leftPlayerCount" style="text-align:center;">
-                            🎮 <span id="playerCountLeft">0</span> jugadores conectados
+                        <div style="margin-top: 20px;">
+                            <button class="button-primary" onclick="startQuiz()">Iniciar Reto</button>
                         </div>
-
-                        <button id="startBtn" class="btn-primary" onclick="startQuiz()" disabled>
-                            🚀 COMENZAR MISIÓN
-                        </button>
                     </div>
 
-                    <!-- RIGHT SIDE -->
                     <div class="start-right">
                         <div class="qr-section">
-                            <div class="qr-instructions">Escanea para unirte:</div>
+                            <h3 style="margin-bottom: 15px; color: #2d3748;">Escanea para participar</h3>
                             <div class="qr-code-container">
-                                <img id="qrCode" src="" alt="QR Code" />
+                                <img id="qrCode" src="" alt="QR Code">
                             </div>
+                            <p class="qr-instructions">Escanea el código QR con tu teléfono</p>
                             <div class="student-url" id="studentUrl"></div>
+                        </div>
 
-                            <div class="players-counter">
-                                <span id="playerCount">0</span>
-                                <span> 🎮 jugadores conectados</span>
+                        <div class="students-connected">
+                            <div class="students-header">
+                                👥 Estudiantes conectados
+                                <span class="student-badge" id="studentCount">0</span>
                             </div>
+                            <div id="studentsList"></div>
+                        </div>
 
-                            <div class="students-connected">
-                                <div class="students-header">
-                                    Estudiantes registrados
-                                    <span id="studentBadge" class="student-badge">0</span>
-                                </div>
-                                <div id="studentsList"></div>
-                            </div>
+                        <div style="margin-top: 20px; text-align: center;">
+                            <div class="players-counter" id="playersCounter">0 jugadores</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- WAITING SCREEN (Student) -->
-            <div id="studentWaiting" class="screen waiting-screen">
+            <!-- REGISTRATION SCREEN (STUDENT) -->
+            <div class="screen registration-screen">
+                <div class="registration-card">
+                    <h1 class="registration-title">Bienvenido</h1>
+                    <p class="registration-subtitle">Registrate para participar en el reto</p>
+
+                    <div id="registrationError" class="error-message"></div>
+                    <div id="registrationSuccess" class="success-message"></div>
+
+                    <div class="form-group">
+                        <input type="text" id="studentName" class="input-field" placeholder="Tu nombre" autocomplete="name">
+                    </div>
+
+                    <div class="form-group" style="flex-direction: row; gap: 10px;">
+                        <input type="text" id="studentSurname" class="input-field" placeholder="Apellido" autocomplete="family-name">
+                        <input type="text" id="studentGroup" class="input-field short" placeholder="Grupo" maxlength="4">
+                    </div>
+
+                    <button class="button-primary" style="width: 100%;" onclick="registerStudent()">Registrarse</button>
+                </div>
+            </div>
+
+            <!-- WAITING SCREEN (STUDENT) -->
+            <div class="screen waiting-screen">
                 <div class="waiting-card">
                     <div class="waiting-emoji">⏳</div>
-                    <div class="waiting-text">¡Estás dentro, <span id="waitingName"></span>!</div>
-                    <div class="waiting-subtext">Esperando a que el profesor inicie la misión...</div>
-                    <div class="pulsing-dots">• • •</div>
+                    <div class="waiting-text">¡Hola, <span id="waitingStudentName">estudiante</span>!</div>
+                    <div class="waiting-subtext">Espera a que el profesor inicie el reto...</div>
+                    <div class="pulsing-dots">···</div>
                 </div>
             </div>
 
-            <!-- ROUND TRANSITION SCREEN (Teacher) -->
-            <div id="roundTransition" class="screen teacher-screen">
-                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 40px;">
-                    <div class="round-emoji-large" id="transitionEmoji"></div>
-                    <h2 class="round-title" id="transitionTitle"></h2>
-                    <p class="round-description" id="transitionDescription"></p>
-                    <div class="speech-bubble" id="transitionSpeech"></div>
+            <!-- ROUND TRANSITION SCREEN (TEACHER) -->
+            <div class="screen round-transition teacher-screen">
+                <div class="round-emoji-large" id="roundEmoji"></div>
+                <h1 class="round-title" id="roundName"></h1>
+                <p class="round-description" id="roundDescription"></p>
+                <div style="margin-top: 20px;">
+                    <button class="button-primary" onclick="nextQuestion()">Siguiente pregunta</button>
                 </div>
             </div>
 
-            <!-- QUESTION SCREEN (Teacher) -->
-            <div id="teacherQuestion" class="screen teacher-screen question-screen">
+            <!-- QUESTION SCREEN (TEACHER) -->
+            <div class="screen question-screen teacher-screen">
                 <div class="progress-section">
-                    <span class="round-badge" id="questionRoundEmoji"></span>
+                    <span style="color: #2d3748;">Progreso</span>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill"></div>
                     </div>
@@ -1318,168 +1362,145 @@
 
                 <div class="question-card">
                     <div class="round-info-badge">
-                        <span class="emoji" id="questionRoundEmoji2"></span>
+                        <span class="emoji" id="questionRoundEmoji"></span>
                         <span id="questionRoundName"></span>
+                        <span class="difficulty-indicator" id="difficultyIndicator"></span>
                     </div>
-                    <div class="question-number" id="questionNumber"></div>
-                    <div id="questionText"></div>
+                    <p class="question-number" id="questionNumber"></p>
+                    <p id="questionText"></p>
                 </div>
 
                 <div class="options-grid" id="optionsGrid"></div>
 
-                <div class="vote-counter" id="voteCounter">🗳️ Esperando votos...</div>
+                <div class="vote-counter">
+                    <span id="voteCount">0</span> estudiantes han respondido
+                </div>
 
-                <div style="display: flex; gap: 15px;">
-                    <button class="btn-primary" onclick="closeVoting()" style="flex: 1;">
-                        🔒 CERRAR VOTACIÓN
-                    </button>
+                <div style="margin-top: auto; display: flex; gap: 10px;">
+                    <button class="button-primary" onclick="showResults()" style="flex: 1;">Ver resultados</button>
                 </div>
             </div>
 
-            <!-- RESULTS SCREEN (Teacher) -->
-            <div id="teacherResults" class="screen teacher-screen">
-                <div class="results-container">
-                    <div class="results-question">
-                        <h3 style="font-size: 20px; margin-bottom: 15px;" id="resultsQuestionText"></h3>
-                        <div class="results-grid" id="resultsGrid"></div>
-                        <div class="don-balance-reaction" id="donReaction"></div>
-                    </div>
-                    <button class="btn-primary" onclick="showExplanation()">💡 VER EXPLICACIÓN →</button>
+            <!-- RESULTS SCREEN (TEACHER) -->
+            <div class="screen results-container teacher-screen">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <button class="nav-button back-btn" onclick="goBackToQuestion()">← Atrás</button>
+                </div>
+
+                <div class="results-question">
+                    <p id="resultsQuestionText" style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #2d3748;"></p>
+
+                    <div class="results-grid" id="resultsGrid"></div>
+
+                    <div id="donBalanceReaction" class="don-balance-reaction"></div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="button-primary" onclick="nextQuestion()">Siguiente pregunta</button>
                 </div>
             </div>
 
-            <!-- EXPLANATION SCREEN (Teacher) -->
-            <div id="teacherExplanation" class="screen teacher-screen">
-                <div class="explanation-screen">
-                    <div class="explanation-header">
-                        <div class="explanation-question-info">
-                            <span class="emoji" id="explanationRoundEmoji"></span>
-                            <span id="explanationQuestionInfo"></span>
-                        </div>
-                        <div class="results-summary" id="resultsSummaryBar"></div>
-                        <div class="correct-answer-banner" id="correctAnswerBanner"></div>
+            <!-- EXPLANATION SCREEN (TEACHER & STUDENT) -->
+            <div class="screen explanation-screen teacher-screen">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <button class="nav-button back-btn" onclick="goBackToResults()">← Atrás</button>
+                </div>
+
+                <div class="explanation-header">
+                    <div class="explanation-question-info">
+                        <span class="emoji" id="explanationRoundEmoji"></span>
+                        <span id="explanationRoundName"></span>
                     </div>
 
-                    <div class="explanation-content">
-                        <div class="explanation-title">
-                            <span class="explanation-icon">💡</span>
-                            EXPLICACIÓN
-                        </div>
-                        <div class="explanation-text" id="explanationText"></div>
-                        <div class="don-balance-comment" id="explanationDonComment"></div>
+                    <div class="correct-answer-banner">
+                        Respuesta correcta: <span id="correctAnswerLetter"></span>
                     </div>
 
-                    <button class="btn-primary" onclick="nextQuestion()" id="nextButton">
-                        ➡️ SIGUIENTE PREGUNTA
-                    </button>
+                    <div class="results-summary" id="resultsSummary"></div>
+                </div>
+
+                <div id="graphicContainer"></div>
+
+                <div class="explanation-content">
+                    <div class="explanation-title">
+                        <span class="explanation-icon">💡</span>
+                        Explicación
+                    </div>
+                    <div class="explanation-text" id="explanationText"></div>
+                    <div id="donBalanceComment" class="don-balance-comment"></div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="button-primary" onclick="nextQuestion()">Siguiente pregunta</button>
                 </div>
             </div>
 
             <!-- STUDENT VOTING SCREEN -->
-            <div id="studentVoting" class="screen student-voting">
+            <div class="screen student-voting">
                 <div class="student-question-card">
                     <div class="student-round-info">
-                        <span class="emoji" id="studentVotingRoundEmoji"></span>
-                        <span id="studentVotingRoundName"></span>
+                        <span class="emoji" id="studentRoundEmoji"></span>
+                        <span id="studentRoundName"></span>
                     </div>
-                    <div style="font-size: 12px; color: #a0aec0; margin-bottom: 10px;" id="studentQuestionNumber"></div>
-                    <div class="student-question-text" id="studentQuestionText"></div>
+                    <p class="student-question-text" id="studentQuestionText"></p>
                 </div>
 
-                <div class="student-options" id="studentOptions"></div>
-
-                <div id="studentVotedMsg" class="student-voted-message" style="display: none;">
-                    ✓ Voto registrado. Esperando a los demás...
-                </div>
-            </div>
-
-            <!-- STUDENT RESULT SCREEN (simplificado - resultados se ven en la pantalla del profesor) -->
-            <div id="studentResult" class="screen student-voting">
-                <div style="text-align: center; padding: 40px;">
-                    <div style="font-size: 60px; margin-bottom: 20px;" id="studentResultEmoji">⏳</div>
-                    <div style="font-size: 22px; font-weight: bold; margin-bottom: 10px;" id="resultMessage">Voto registrado</div>
-                    <div style="font-size: 16px; color: #a0aec0;">Mira la pantalla del profesor para ver los resultados y la explicación</div>
-                    <div style="margin-top: 30px; font-size: 14px; color: #718096;">Esperando siguiente pregunta...</div>
-                </div>
-            </div>
-
-            <!-- FINAL RESULTS SCREEN (Teacher & Student) -->
-            <div id="finalResults" class="screen teacher-screen">
-                <div class="final-results-container">
-                    <h1 class="final-title">🏆 RESULTADOS FINALES</h1>
-
-                    <div class="final-speech" id="finalSpeech"></div>
-
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-label">PROMEDIO CLASE</div>
-                            <div class="stat-value" id="classAvg">0%</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-label">RONDA MÁS FÁCIL</div>
-                            <div class="stat-value" id="bestRound">📚</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-label">RONDA MÁS DIFÍCIL</div>
-                            <div class="stat-value" id="hardestRound">📚</div>
-                        </div>
+                <div id="studentVotingContent">
+                    <div class="student-options" id="studentOptions"></div>
+                    <div id="studentVotedMessage" class="student-voted-message" style="display: none;">
+                        ✅ Tu respuesta ha sido registrada
                     </div>
+                </div>
 
-                    <h3 style="text-align: center; font-size: 24px; margin-top: 30px; margin-bottom: 20px;">🥇 TOP 5</h3>
-                    <table class="ranking-table">
-                        <thead>
-                            <tr>
-                                <th>Puesto</th>
-                                <th>Nombre</th>
-                                <th>Puntuación</th>
-                                <th>Porcentaje</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rankingBody"></tbody>
-                    </table>
+                <div class="student-waiting-message" id="studentWaitingMessage" style="display: none;">
+                    Esperando los resultados...
+                </div>
 
-                    <h3 style="text-align: center; font-size: 24px; margin-top: 30px; margin-bottom: 20px;">📊 PREGUNTAS MÁS DIFÍCILES</h3>
-                    <table class="ranking-table">
-                        <thead>
-                            <tr>
-                                <th>Pregunta</th>
-                                <th>Ronda</th>
-                                <th>Aciertos</th>
-                            </tr>
-                        </thead>
-                        <tbody id="hardestQuestionsBody"></tbody>
-                    </table>
-
-                    <h3 style="text-align: center; font-size: 24px; margin-top: 30px; margin-bottom: 20px;">📈 PREGUNTAS MÁS FÁCILES</h3>
-                    <table class="ranking-table">
-                        <thead>
-                            <tr>
-                                <th>Pregunta</th>
-                                <th>Ronda</th>
-                                <th>Aciertos</th>
-                            </tr>
-                        </thead>
-                        <tbody id="easiestQuestionsBody"></tbody>
-                    </table>
-
-                    <div class="chart-container" id="roundChart"></div>
-
-                    <div style="text-align: center; margin-top: 30px;">
-                        <button class="btn-secondary" onclick="downloadCSV()">📥 Descargar CSV</button>
-                    </div>
+                <div id="studentResultContent" style="display: none;">
+                    <div class="student-result-message" id="studentResultMessage"></div>
+                    <div class="student-explanation-preview" id="studentExplanationPreview"></div>
                 </div>
             </div>
 
-            <!-- PERSONAL STATS SCREEN (Student Final - simplificado) -->
-            <div id="studentFinal" class="screen student-voting">
-                <div style="text-align: center; padding: 40px;">
-                    <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
-                    <h1 style="font-size: 28px; margin-bottom: 15px;">¡Misión completada!</h1>
-                    <div style="font-size: 40px; font-weight: bold; color: #e53e3e; margin-bottom: 20px;">
-                        <span id="studentFinalScore">0</span>/40
+            <!-- FINAL RESULTS SCREEN (TEACHER) -->
+            <div class="screen final-results-container teacher-screen">
+                <h1 class="final-title">¡Se acabó el reto!</h1>
+
+                <div class="final-speech" id="finalSpeech"></div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Participantes</div>
+                        <div class="stat-value" id="finalParticipants">0</div>
                     </div>
-                    <div style="font-size: 18px; color: #cbd5e0; margin-bottom: 15px;" id="studentFinalMessage"></div>
-                    <div style="font-size: 15px; color: #718096;">Mira la pantalla del profesor para ver el ranking y las estadísticas completas</div>
+                    <div class="stat-card">
+                        <div class="stat-label">Aciertos totales</div>
+                        <div class="stat-value" id="finalCorrect">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">% Promedio</div>
+                        <div class="stat-value" id="finalPercentage">0%</div>
+                    </div>
+                </div>
+
+                <table class="ranking-table" id="rankingTable">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Grupo</th>
+                            <th>Aciertos</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingBody"></tbody>
+                </table>
+
+                <div class="chart-container" id="chartContainer"></div>
+
+                <div class="final-buttons">
+                    <button class="button-primary" onclick="downloadCSV()">📥 Descargar CSV</button>
+                    <button class="button-primary" onclick="resetQuiz()">🔄 NUEVA RONDA</button>
                 </div>
             </div>
         </div>
@@ -1487,7 +1508,6 @@
 
     <script>
         // ============= FIREBASE CONFIG =============
-        // IMPORTANTE: Reemplaza esto con tu configuración de Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyBO9oegSG5RnmRrm7ImhWQqSkCra6YA22w",
             authDomain: "reto-contable-app.firebaseapp.com",
@@ -1533,55 +1553,62 @@
             end: "¡Se acabó! Ahora ya sabéis quién es el verdadero héroe contable de esta clase. Y recordad: un buen contable nunca duerme... porque siempre hay algo que cuadrar."
         };
 
-        const QUESTIONS = [
+                const QUESTIONS = [
         {
             numero: 1,
             ronda: 1,
+            dificultad: 1,
             pregunta: "Una empresa tiene un cliente que le debe 10.000 € y a la vez le debe a ese mismo cliente 3.000 € como proveedor. ¿Puede presentar solo la diferencia (7.000 €) en el balance?",
             opciones: [
                 "Sí, siempre que sean del mismo tercero",
                 "Sí, si ambas deudas vencen el mismo año",
                 "No, salvo norma expresa: rige el principio de no compensación",
-                "Solo si el auditor lo autoriza",
+                "Solo si el auditor lo autoriza"
             ],
             correcta: 2,
-            explicacion: "El principio de no compensación (art. 38 Código de Comercio y PGC) prohíbe compensar activos con pasivos o ingresos con gastos, salvo norma expresa. Los 10.000 € deben figurar en el activo (Clientes) y los 3.000 € en el pasivo (Proveedores). Si compensamos, un analista externo no sabría cuánto debe realmente la empresa ni cuánto le deben."
+            explicacion: "El principio de no compensación (art. 38 Código de Comercio y PGC) prohíbe compensar activos con pasivos o ingresos con gastos, salvo norma expresa. Los 10.000 € deben figurar en el activo (Clientes) y los 3.000 € en el pasivo (Proveedores). Si compensamos, un analista externo no sabría cuánto debe realmente la empresa ni cuánto le deben.",
+            grafico: '<div style="display:flex;gap:20px;justify-content:center;align-items:center;padding:15px"><div style="text-align:center;padding:15px 25px;background:#e8f5e9;border-radius:8px;border:2px solid #4caf50"><div style="font-weight:bold;color:#2e7d32">ACTIVO</div><div style="font-size:14px;margin-top:5px">Clientes: 10.000 €</div></div><div style="font-size:24px;color:#e53e3e;font-weight:bold">≠</div><div style="text-align:center;padding:15px 25px;background:#ffebee;border-radius:8px;border:2px solid #e53e3e"><div style="font-weight:bold;color:#c62828">PASIVO</div><div style="font-size:14px;margin-top:5px">Proveedores: 3.000 €</div></div></div><div style="text-align:center;font-size:13px;color:#666;margin-top:5px">❌ No se pueden compensar → Principio de no compensación</div>'
         },
         {
             numero: 2,
             ronda: 1,
+            dificultad: 1,
             pregunta: "¿Qué principio contable obliga a registrar las pérdidas potenciales tan pronto como se conocen, aunque no se hayan materializado?",
             opciones: [
                 "Principio de empresa en funcionamiento",
                 "Principio de importancia relativa",
                 "Principio de devengo",
-                "Principio de prudencia",
+                "Principio de prudencia"
             ],
             correcta: 3,
-            explicacion: "El principio de prudencia establece que los riesgos y pérdidas previsibles deben contabilizarse en cuanto se conozcan, aunque su cuantía exacta o momento sean inciertos. De aquí nacen las provisiones y los deterioros de valor. Los beneficios, en cambio, solo se registran cuando están realizados."
+            explicacion: "El principio de prudencia establece que los riesgos y pérdidas previsibles deben contabilizarse en cuanto se conozcan, aunque su cuantía exacta o momento sean inciertos. De aquí nacen las provisiones y los deterioros de valor. Los beneficios, en cambio, solo se registran cuando están realizados.",
+            grafico: '<div style="display:flex;gap:30px;justify-content:center;padding:15px"><div style="text-align:center;padding:15px;background:#ffebee;border-radius:8px;border:2px solid #e53e3e"><div style="font-size:20px">⚠️</div><div style="font-weight:bold;color:#c62828;font-size:14px">Pérdidas probables</div><div style="font-size:13px;color:#666">Se registran YA</div></div><div style="text-align:center;padding:15px;background:#e8f5e9;border-radius:8px;border:2px solid #4caf50"><div style="font-size:20px">✅</div><div style="font-weight:bold;color:#2e7d32;font-size:14px">Beneficios</div><div style="font-size:13px;color:#666">Solo cuando realizados</div></div></div><div style="text-align:center;font-size:13px;color:#666;margin-top:5px">Asimetría del principio de prudencia</div>'
         },
         {
             numero: 3,
             ronda: 1,
+            dificultad: 2,
             pregunta: "Una empresa firma un contrato de alquiler por 12.000 €/año, pagando todo en enero. Al cerrar cuentas el 31 de diciembre, ¿cómo se registra el gasto?",
             opciones: [
                 "Se registra como activo porque es un derecho de uso",
                 "12.000 € repartido por meses según el principio de devengo",
                 "12.000 € como gasto íntegro en enero, cuando se pagó",
-                "No se registra hasta que venza el contrato",
+                "No se registra hasta que venza el contrato"
             ],
             correcta: 1,
-            explicacion: "El principio de devengo obliga a imputar ingresos y gastos al periodo en que se producen. El gasto se devenga mes a mes (1.000 €/mes). Si cubriera enero-junio del año siguiente, habría que periodificar 6.000 € como gasto anticipado (activo corriente)."
+            explicacion: "El principio de devengo obliga a imputar ingresos y gastos al periodo en que se producen. El gasto se devenga mes a mes (1.000 €/mes). Si cubriera enero-junio del año siguiente, habría que periodificar 6.000 € como gasto anticipado (activo corriente).",
+            grafico: '<div style="display:flex;gap:4px;justify-content:center;padding:10px;flex-wrap:wrap"><div style="padding:6px 8px;background:#e3f2fd;border-radius:4px;font-size:11px;border:2px solid #1976d2;font-weight:bold">ENE</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">FEB</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">MAR</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">ABR</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">MAY</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">JUN</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">JUL</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">AGO</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">SEP</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">OCT</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">NOV</div><div style="padding:6px 8px;background:#f5f5f5;border-radius:4px;font-size:11px">DIC</div></div><div style="text-align:center;font-size:13px;color:#666">12.000 € ÷ 12 meses = 1.000 €/mes (principio de devengo)</div>'
         },
         {
             numero: 4,
             ronda: 1,
+            dificultad: 2,
             pregunta: "¿Cuál de estas situaciones supone un INCUMPLIMIENTO del principio de imagen fiel?",
             opciones: [
                 "No registrar pérdidas probables de un litigio porque perjudicaría la imagen ante inversores",
                 "Presentar las cuentas en modelo Abreviado en vez de Normal",
                 "Valorar existencias por coste medio ponderado en vez de FIFO",
-                "Aplicar un criterio de amortización diferente al del año anterior si se justifica en la Memoria",
+                "Aplicar un criterio de amortización diferente al del año anterior si se justifica en la Memoria"
             ],
             correcta: 0,
             explicacion: "La imagen fiel es el objetivo supremo de las cuentas anuales. Ocultar pérdidas probables para 'maquillar' la imagen ante inversores es una violación directa: la contabilidad deja de reflejar la realidad económica."
@@ -1589,12 +1616,13 @@
         {
             numero: 5,
             ronda: 1,
+            dificultad: 2,
             pregunta: "Mini-caso: Un contable duda sobre si registrar una posible indemnización a favor de la empresa por un juicio que probablemente ganará. ¿Qué debe hacer según los principios contables?",
             opciones: [
                 "No registrarlo nunca hasta que lo cobre efectivamente",
                 "Registrar el ingreso solo cuando la sentencia sea firme y el cobro esté asegurado",
                 "Registrar la mitad del importe como provisión",
-                "Registrar el ingreso inmediatamente por prudencia",
+                "Registrar el ingreso inmediatamente por prudencia"
             ],
             correcta: 1,
             explicacion: "La prudencia funciona de forma asimétrica: las pérdidas se reconocen cuando son probables, pero los beneficios solo cuando están realizados o prácticamente asegurados. Una indemnización probable pero no firme se informa en la Memoria como activo contingente."
@@ -1602,12 +1630,13 @@
         {
             numero: 6,
             ronda: 1,
+            dificultad: 1,
             pregunta: "¿Cuál es el objetivo FUNDAMENTAL de las cuentas anuales según el Marco Conceptual del PGC?",
             opciones: [
                 "Cumplir con las obligaciones tributarias",
                 "Informar exclusivamente a los accionistas mayoritarios",
                 "Maximizar el beneficio fiscal de la empresa",
-                "Mostrar la imagen fiel del patrimonio, de la situación financiera y de los resultados",
+                "Mostrar la imagen fiel del patrimonio, de la situación financiera y de los resultados"
             ],
             correcta: 3,
             explicacion: "El Marco Conceptual del PGC establece que el objetivo fundamental de las cuentas anuales es mostrar la imagen fiel del patrimonio, la situación financiera y los resultados de la empresa. Todos los principios contables están al servicio de este objetivo."
@@ -1615,12 +1644,13 @@
         {
             numero: 7,
             ronda: 1,
+            dificultad: 1,
             pregunta: "Mini-caso: Una empresa compra materia prima por 10.000 € en diciembre de 2025, pero no la pagará hasta febrero de 2026. ¿En qué ejercicio se registra el gasto?",
             opciones: [
                 "En 2025, cuando se produce la obligación (principio de devengo)",
                 "Se reparte entre ambos ejercicios",
                 "Depende de lo que decida el director financiero",
-                "En 2026, cuando se efectúa el pago",
+                "En 2026, cuando se efectúa el pago"
             ],
             correcta: 0,
             explicacion: "El principio de devengo es claro: los hechos económicos se registran cuando ocurren, no cuando se cobra o se paga. La compra genera un gasto y una obligación de pago en diciembre de 2025."
@@ -1628,12 +1658,13 @@
         {
             numero: 8,
             ronda: 1,
+            dificultad: 2,
             pregunta: "¿Qué significa el principio de empresa en funcionamiento y qué consecuencias tiene para la valoración de los activos?",
             opciones: [
                 "Solo se aplica a empresas con más de 50 empleados",
                 "La empresa debe funcionar 24 horas al día",
                 "Se presume que la empresa continuará su actividad, lo que permite valorar activos a coste histórico y amortizarlos a lo largo de su vida útil",
-                "Los activos se valoran a precio de liquidación porque la empresa podría cerrar",
+                "Los activos se valoran a precio de liquidación porque la empresa podría cerrar"
             ],
             correcta: 2,
             explicacion: "Si presumimos que la empresa va a seguir operando, tiene sentido valorar una máquina a su coste de adquisición y repartir ese coste durante su vida útil. Este principio es la base que sustenta gran parte de los criterios de valoración del PGC."
@@ -1641,25 +1672,28 @@
         {
             numero: 9,
             ronda: 2,
+            dificultad: 2,
             pregunta: "Mini-caso: La empresa ALFA S.L. compra maquinaria por 100.000 € (vida útil 10 años, amortización lineal). Al final del primer año, ¿qué efecto tiene la amortización en la tesorería?",
             opciones: [
                 "Se transfieren 10.000 € a una cuenta de reservas obligatoria",
                 "La tesorería aumenta porque la amortización genera un fondo de efectivo",
                 "Sale dinero de la cuenta bancaria: se pagan 10.000 € al fabricante",
-                "No hay movimiento de tesorería: la amortización reduce el valor del activo y el resultado, pero no implica salida de caja",
+                "No hay movimiento de tesorería: la amortización reduce el valor del activo y el resultado, pero no implica salida de caja"
             ],
             correcta: 3,
-            explicacion: "La amortización es un gasto contable, NO un pago. El dinero salió cuando se compró la máquina. Una empresa puede tener beneficios contables y problemas de liquidez, o viceversa."
+            explicacion: "La amortización es un gasto contable, NO un pago. El dinero salió cuando se compró la máquina. Una empresa puede tener beneficios contables y problemas de liquidez, o viceversa.",
+            grafico: '<div style="display:flex;gap:20px;justify-content:center;align-items:center;padding:15px"><div style="text-align:center;padding:12px;background:#fff3e0;border-radius:8px;border:2px solid #ff9800"><div style="font-weight:bold;font-size:14px;color:#e65100">Amortización</div><div style="font-size:13px;color:#666">Gasto contable</div><div style="font-size:20px;margin-top:5px">📝</div></div><div style="font-size:24px;color:#e53e3e">≠</div><div style="text-align:center;padding:12px;background:#e3f2fd;border-radius:8px;border:2px solid #1976d2"><div style="font-weight:bold;font-size:14px;color:#0d47a1">Pago</div><div style="font-size:13px;color:#666">Salida de caja</div><div style="font-size:20px;margin-top:5px">💰</div></div></div>'
         },
         {
             numero: 10,
             ronda: 2,
+            dificultad: 1,
             pregunta: "Mini-caso: BETA S.A. vende productos a un cliente por 8.000 € + IVA (21%). El cliente pagará a 60 días. ¿Cuál es el asiento correcto?",
             opciones: [
                 "Debe: Ventas 8.000 / Haber: Clientes 8.000",
                 "Debe: Clientes 9.680 / Haber: Ventas 8.000 + IVA repercutido 1.680",
                 "No se registra hasta que el cliente pague",
-                "Debe: Bancos 9.680 / Haber: Ventas 8.000 + IVA repercutido 1.680",
+                "Debe: Bancos 9.680 / Haber: Ventas 8.000 + IVA repercutido 1.680"
             ],
             correcta: 1,
             explicacion: "Al vender a crédito, nace un derecho de cobro en Clientes por el total con IVA (9.680 €). El ingreso por ventas se registra por el neto (8.000 €) y el IVA repercutido por 1.680 €. No se espera al cobro porque rige el principio de devengo."
@@ -1667,12 +1701,13 @@
         {
             numero: 11,
             ronda: 2,
+            dificultad: 2,
             pregunta: "¿Qué es exactamente la regularización contable y cuándo se produce?",
             opciones: [
                 "Es el proceso de fin de ejercicio que cancela las cuentas de ingresos (grupo 7) y gastos (grupo 6), trasladando sus saldos a la cuenta 129 (Resultado del ejercicio)",
                 "Se hace cada trimestre para calcular los impuestos",
                 "Es la corrección de errores que hace el auditor al revisar las cuentas",
-                "Es la apertura de los libros contables al inicio del año",
+                "Es la apertura de los libros contables al inicio del año"
             ],
             correcta: 0,
             explicacion: "La regularización es el penúltimo paso del ciclo contable. Se cancelan TODAS las cuentas de gastos e ingresos, trasladando sus saldos contra la cuenta 129. Este saldo pasa al balance como parte del Patrimonio Neto."
@@ -1680,12 +1715,13 @@
         {
             numero: 12,
             ronda: 2,
+            dificultad: 2,
             pregunta: "Mini-caso: GAMMA S.L. detecta que un cliente con deuda de 25.000 € tiene serias dificultades financieras. ¿Qué ajuste debe hacer al cierre?",
             opciones: [
                 "Nada: hasta que no sea oficialmente incobrable, no se toca",
                 "Dar de baja directamente al cliente del balance",
                 "Registrar un deterioro de valor de clientes, reconociendo un gasto que reduce el resultado y ajusta el activo a su valor recuperable",
-                "Transferir la deuda a una cuenta de reservas",
+                "Transferir la deuda a una cuenta de reservas"
             ],
             correcta: 2,
             explicacion: "El principio de prudencia obliga a reconocer las pérdidas probables. Si hay evidencia de dificultades financieras del cliente, se registra un deterioro. La deuda sigue en Clientes, pero se ajusta a su valor recuperable estimado."
@@ -1693,12 +1729,13 @@
         {
             numero: 13,
             ronda: 2,
+            dificultad: 1,
             pregunta: "¿Qué refleja un saldo deudor en la cuenta 129 (Resultado del ejercicio) después de la regularización?",
             opciones: [
                 "Beneficio del ejercicio",
                 "Dividendos a repartir a los socios",
                 "Capital social pendiente de desembolso",
-                "Pérdidas del ejercicio",
+                "Pérdidas del ejercicio"
             ],
             correcta: 3,
             explicacion: "La cuenta 129 recoge el resultado del ejercicio tras la regularización. Si su saldo es acreedor, hay beneficio. Si es deudor, hay pérdidas: los gastos han superado a los ingresos."
@@ -1706,12 +1743,13 @@
         {
             numero: 14,
             ronda: 2,
+            dificultad: 2,
             pregunta: "Mini-caso: Una empresa paga en noviembre la prima de seguro del local para el periodo diciembre 2025 - noviembre 2026 (12.000 €). ¿Cómo se contabiliza al cierre del ejercicio 2025?",
             opciones: [
                 "Todo como gasto anticipado porque el seguro cubre mayoritariamente 2026",
                 "11.000 € como gasto anticipado (activo) y 1.000 € como gasto del ejercicio 2025",
                 "No se registra hasta que transcurra el periodo completo del seguro",
-                "Todo como gasto de 2025 porque se pagó en 2025",
+                "Todo como gasto de 2025 porque se pagó en 2025"
             ],
             correcta: 1,
             explicacion: "Solo 1 mes (diciembre) corresponde al ejercicio 2025 = 1.000 € de gasto. Los 11 meses restantes se periodifican como gasto anticipado. La periodificación es clave para respetar el principio de devengo."
@@ -1719,12 +1757,13 @@
         {
             numero: 15,
             ronda: 2,
+            dificultad: 1,
             pregunta: "En la partida doble, si registramos un cargo (Debe) en la cuenta de Bancos, ¿qué significa económicamente?",
             opciones: [
                 "Que la empresa ha cobrado o recibido dinero y tiene más tesorería",
                 "Que el banco ha cargado una comisión",
                 "Que la empresa ha pagado algo y tiene menos dinero",
-                "Que se ha producido un error contable",
+                "Que se ha producido un error contable"
             ],
             correcta: 0,
             explicacion: "Las cuentas de activo aumentan por el Debe. Un cargo en Bancos significa que ha entrado dinero. Un abono en Bancos significa salida de dinero. Esta es la lógica fundamental de la partida doble."
@@ -1732,12 +1771,13 @@
         {
             numero: 16,
             ronda: 2,
+            dificultad: 2,
             pregunta: "Mini-caso: DELTA S.L. descubre en diciembre que la factura de electricidad de noviembre (800 €) no se ha contabilizado. ¿Qué debe hacer antes de cerrar las cuentas de 2025?",
             opciones: [
                 "Ignorarlo porque es un importe pequeño y no afecta a la imagen fiel",
                 "Esperar a que el auditor lo detecte y lo corrija",
                 "Registrarlo como gasto de 2025 con una provisión o ajuste, porque el consumo se devengó en noviembre",
-                "Registrar el gasto en enero de 2026 cuando llegue la factura",
+                "Registrar el gasto en enero de 2026 cuando llegue la factura"
             ],
             correcta: 2,
             explicacion: "El consumo de electricidad se devengó en noviembre de 2025. Al cierre, se hace un ajuste para garantizar que el resultado de 2025 refleja todos los gastos realmente incurridos."
@@ -1745,38 +1785,43 @@
         {
             numero: 17,
             ronda: 3,
+            dificultad: 3,
             pregunta: "Mini-caso: Una PYME compra una nave industrial (vida útil 30 años) financiada íntegramente con un préstamo a 90 días al 2%. El director está satisfecho por el bajo interés. ¿Cuál es el problema?",
             opciones: [
                 "Descorrelación temporal grave: la deuda vence en 3 meses pero el activo tardará años en generar retornos suficientes. Riesgo de crisis de liquidez",
                 "No hay problema: el tipo de interés es muy bajo",
                 "Solo sería problema si la nave no estuviera asegurada",
-                "El problema es solo fiscal, no financiero",
+                "El problema es solo fiscal, no financiero"
             ],
             correcta: 0,
-            explicacion: "Regla de oro del equilibrio financiero: los activos de larga duración deben financiarse con recursos permanentes. Si financias una nave a 30 años con deuda a 90 días, cuando venza el préstamo apenas habrá empezado a generar ingresos."
+            explicacion: "Regla de oro del equilibrio financiero: los activos de larga duración deben financiarse con recursos permanentes. Si financias una nave a 30 años con deuda a 90 días, cuando venza el préstamo apenas habrá empezado a generar ingresos.",
+            grafico: '<div style="text-align:center;padding:15px"><div style="display:inline-flex;align-items:center;gap:15px"><div style="padding:10px 20px;background:#e3f2fd;border-radius:8px;border:2px solid #1976d2;text-align:center"><div style="font-size:12px;color:#666">Nave industrial</div><div style="font-weight:bold;color:#1976d2">30 años</div></div><div style="font-size:18px;color:#e53e3e">⚡</div><div style="padding:10px 20px;background:#ffebee;border-radius:8px;border:2px solid #e53e3e;text-align:center"><div style="font-size:12px;color:#666">Préstamo</div><div style="font-weight:bold;color:#e53e3e">90 días</div></div></div><div style="font-size:13px;color:#e53e3e;margin-top:8px;font-weight:bold">⚠️ Descorrelación temporal grave</div></div>'
         },
         {
             numero: 18,
             ronda: 3,
+            dificultad: 3,
             pregunta: "Mini-caso: DELTA S.A. presenta Patrimonio Neto = -50.000 €. El gerente dice que no importa porque sigue vendiendo mucho. ¿Tiene razón?",
             opciones: [
                 "Sí, mientras venda puede funcionar indefinidamente",
                 "Depende del sector: en tecnología es normal tener PN negativo",
                 "Solo es grave si debe más de 1 millón de euros",
-                "No: PN negativo = quiebra técnica. Los pasivos superan a los activos y los administradores DEBEN actuar legalmente",
+                "No: PN negativo = quiebra técnica. Los pasivos superan a los activos y los administradores DEBEN actuar legalmente"
             ],
             correcta: 3,
-            explicacion: "Un Patrimonio Neto negativo significa quiebra técnica. El art. 363 de la Ley de Sociedades de Capital obliga a los administradores a actuar. Facturar mucho es irrelevante: una empresa puede facturar millones y estar técnicamente en quiebra."
+            explicacion: "Un Patrimonio Neto negativo significa quiebra técnica. El art. 363 de la Ley de Sociedades de Capital obliga a los administradores a actuar. Facturar mucho es irrelevante: una empresa puede facturar millones y estar técnicamente en quiebra.",
+            grafico: '<div style="text-align:center;padding:15px"><div style="display:inline-block;padding:15px 30px;background:#ffebee;border-radius:8px;border:3px solid #e53e3e"><div style="font-size:14px;color:#666">Patrimonio Neto</div><div style="font-size:28px;font-weight:bold;color:#e53e3e">-50.000 €</div><div style="font-size:12px;color:#e53e3e;margin-top:5px">⚠️ QUIEBRA TÉCNICA</div></div></div>'
         },
         {
             numero: 19,
             ronda: 3,
+            dificultad: 2,
             pregunta: "PESADA S.A. tiene el 85% de su activo en inmovilizado. LIGERA S.L. tiene solo el 10%. ¿Qué puedes concluir sobre su estructura operativa?",
             opciones: [
                 "LIGERA tiene más riesgo porque tiene menos activos fijos",
                 "PESADA es más rentable porque tiene más activos",
                 "PESADA es intensiva en capital (altos costes fijos, mayor apalancamiento operativo y riesgo). LIGERA es más flexible y ágil",
-                "No se puede concluir nada sin ver la PyG",
+                "No se puede concluir nada sin ver la PyG"
             ],
             correcta: 2,
             explicacion: "El análisis patrimonial de la estructura del activo permite inferir el modelo de negocio. PESADA es intensiva en capital con costes fijos elevados. LIGERA tiene estructura más flexible. Son modelos de negocio distintos con perfiles de riesgo diferentes."
@@ -1784,12 +1829,13 @@
         {
             numero: 20,
             ronda: 3,
+            dificultad: 2,
             pregunta: "¿Cuál es la diferencia clave entre deudas financieras y deudas comerciales en el pasivo?",
             opciones: [
                 "Las financieras tienen coste explícito (intereses) y son formalizadas en contratos. Las comerciales nacen del tráfico normal y generalmente son financiación gratuita",
                 "Las comerciales son más peligrosas para la empresa",
                 "Las financieras son siempre a largo plazo y las comerciales siempre a corto plazo",
-                "Solo se diferencian en el nombre de la cuenta contable",
+                "Solo se diferencian en el nombre de la cuenta contable"
             ],
             correcta: 0,
             explicacion: "Las deudas financieras tienen un coste explícito: el tipo de interés. Las deudas comerciales nacen del día a día y normalmente no devengan intereses: son financiación operativa gratuita."
@@ -1797,12 +1843,13 @@
         {
             numero: 21,
             ronda: 3,
+            dificultad: 1,
             pregunta: "¿Qué diferencia un activo corriente de uno no corriente según el PGC?",
             opciones: [
                 "El corriente solo incluye el efectivo en banco y caja",
                 "El corriente vale más de 10.000 €; el no corriente, menos",
                 "El no corriente está siempre en el almacén",
-                "El corriente se espera convertir en liquidez en menos de 1 año o está vinculado al ciclo de explotación; el no corriente es permanente o plurianual",
+                "El corriente se espera convertir en liquidez en menos de 1 año o está vinculado al ciclo de explotación; el no corriente es permanente o plurianual"
             ],
             correcta: 3,
             explicacion: "La clasificación corriente/no corriente se basa en el horizonte temporal y la vinculación al ciclo de explotación. Esta distinción es clave para el análisis del equilibrio financiero y el cálculo del Fondo de Maniobra."
@@ -1810,25 +1857,28 @@
         {
             numero: 22,
             ronda: 3,
+            dificultad: 3,
             pregunta: "Mini-caso: EPSILON tiene Activo Total 500.000 €, PN 150.000 €, PNC 200.000 €, PC 150.000 €. Su Activo No Corriente es 320.000 €. ¿Está en equilibrio financiero?",
             opciones: [
                 "Sí: los recursos permanentes (PN + PNC = 350.000 €) cubren el ANC (320.000 €), generando un FM positivo de 30.000 €",
                 "Sí, porque Activo Total > Pasivo Total",
                 "No se puede determinar sin la PyG",
-                "No, porque su ratio de liquidez es inferior a 2",
+                "No, porque su ratio de liquidez es inferior a 2"
             ],
             correcta: 0,
-            explicacion: "El equilibrio financiero básico exige que los recursos permanentes cubran el Activo No Corriente. Aquí: Recursos permanentes = 150.000 + 200.000 = 350.000 €. La empresa tiene margen para atender sus deudas a corto plazo."
+            explicacion: "El equilibrio financiero básico exige que los recursos permanentes cubran el Activo No Corriente. Aquí: Recursos permanentes = 150.000 + 200.000 = 350.000 €. La empresa tiene margen para atender sus deudas a corto plazo.",
+            grafico: '<div style="text-align:center;padding:10px"><table style="margin:0 auto;border-collapse:collapse;font-size:13px"><tr><td style="padding:5px 10px;text-align:right;font-weight:bold">ANC:</td><td style="padding:5px 10px">320.000 €</td><td style="padding:5px 10px;text-align:right;font-weight:bold">PN:</td><td style="padding:5px 10px">150.000 €</td></tr><tr><td style="padding:5px 10px;text-align:right;font-weight:bold">AC:</td><td style="padding:5px 10px">180.000 €</td><td style="padding:5px 10px;text-align:right;font-weight:bold">PNC:</td><td style="padding:5px 10px">200.000 €</td></tr><tr><td></td><td></td><td style="padding:5px 10px;text-align:right;font-weight:bold">PC:</td><td style="padding:5px 10px">150.000 €</td></tr></table><div style="margin-top:8px;padding:8px;background:#e8f5e9;border-radius:6px;font-size:13px"><strong>FM = AC - PC = 180.000 - 150.000 = <span style="color:#2e7d32">30.000 € ✓</span></strong></div></div>'
         },
         {
             numero: 23,
             ronda: 3,
+            dificultad: 2,
             pregunta: "Mini-caso: Una empresa compra un vehículo por 30.000 € con gastos de matriculación de 1.500 € y transporte de 500 €. ¿Cuál es el precio de adquisición que se registra en el balance?",
             opciones: [
                 "30.000 €, solo el precio de compra",
                 "32.000 €: precio + todos los gastos necesarios hasta poner el activo en condiciones de uso",
                 "30.000 € más el IVA soportado",
-                "31.500 €: precio + matriculación, sin el transporte",
+                "31.500 €: precio + matriculación, sin el transporte"
             ],
             correcta: 1,
             explicacion: "El precio de adquisición de un activo incluye el importe facturado más TODOS los gastos necesarios para poner el activo en funcionamiento. En este caso: 30.000 + 1.500 + 500 = 32.000 €. Este es el criterio de valoración fundamental en el PGC."
@@ -1836,25 +1886,28 @@
         {
             numero: 24,
             ronda: 3,
+            dificultad: 2,
             pregunta: "Mini-caso: El balance de ZETA S.L. muestra: Maquinaria 200.000 €, Existencias 40.000 €, Clientes 30.000 €, Tesorería 10.000 €, Capital 100.000 €, Reservas 50.000 €, Préstamo a 5 años 80.000 €, Proveedores 50.000 €. ¿Cuál es el Fondo de Maniobra?",
             opciones: [
                 "FM = Activo Total - Pasivo Total = 280.000 - 130.000 = 150.000 €",
                 "FM = AC - PC = 80.000 - 50.000 = 30.000 € (positivo)",
                 "FM = PN - ANC = 150.000 - 200.000 = -50.000 € (negativo)",
-                "FM = Tesorería - Proveedores = 10.000 - 50.000 = -40.000 €",
+                "FM = Tesorería - Proveedores = 10.000 - 50.000 = -40.000 €"
             ],
             correcta: 1,
-            explicacion: "FM = Activo Corriente - Pasivo Corriente. AC = 80.000 €. PC = 50.000 €. FM = 30.000 € (positivo). La empresa dispone de margen para atender sus deudas a corto plazo con sus activos líquidos."
+            explicacion: "FM = Activo Corriente - Pasivo Corriente. AC = 80.000 €. PC = 50.000 €. FM = 30.000 € (positivo). La empresa dispone de margen para atender sus deudas a corto plazo con sus activos líquidos.",
+            grafico: '<div style="text-align:center;padding:10px"><div style="display:inline-block;text-align:left;font-size:13px"><div style="padding:8px;background:#e8f5e9;border-radius:6px;margin-bottom:5px"><strong>AC</strong> = Existencias + Clientes + Tesorería = 40.000 + 30.000 + 10.000 = <strong>80.000 €</strong></div><div style="padding:8px;background:#ffebee;border-radius:6px;margin-bottom:5px"><strong>PC</strong> = Proveedores = <strong>50.000 €</strong></div><div style="padding:8px;background:#e3f2fd;border-radius:6px"><strong>FM</strong> = 80.000 - 50.000 = <strong style="color:#1976d2">30.000 € ✓</strong></div></div></div>'
         },
         {
             numero: 25,
             ronda: 4,
+            dificultad: 2,
             pregunta: "¿Qué información proporciona el ECPN que el Balance por sí solo NO ofrece?",
             opciones: [
                 "Las previsiones de resultados para el próximo ejercicio",
                 "El detalle de las ventas por línea de producto",
                 "Los flujos de caja del ejercicio",
-                "Explica POR QUÉ cambió el PN: resultado, ingresos/gastos directos al PN, dividendos, ampliaciones y correcciones",
+                "Explica POR QUÉ cambió el PN: resultado, ingresos/gastos directos al PN, dividendos, ampliaciones y correcciones"
             ],
             correcta: 3,
             explicacion: "El Balance muestra el PN en dos fechas, pero no explica por qué cambió. El ECPN desglosa todas las causas: resultado del ejercicio, ingresos y gastos imputados directamente al PN, dividendos distribuidos, ampliaciones de capital."
@@ -1862,12 +1915,13 @@
         {
             numero: 26,
             ronda: 4,
+            dificultad: 3,
             pregunta: "Mini-caso: Eres analista y recibes las cuentas de PRIMUS S.A. con informe de auditoría con opinión DESFAVORABLE. ¿Qué significa exactamente?",
             opciones: [
                 "Hay errores o incumplimientos tan graves y generalizados que las cuentas NO expresan la imagen fiel",
                 "La empresa tiene pérdidas y el auditor lo advierte",
                 "El auditor no ha podido acceder a suficiente documentación",
-                "Las cuentas son correctas pero el auditor discrepa de algún criterio puntual",
+                "Las cuentas son correctas pero el auditor discrepa de algún criterio puntual"
             ],
             correcta: 0,
             explicacion: "Una opinión desfavorable es la más grave: significa que los errores son tan generalizados que las cuentas en su conjunto NO son fiables. Para un analista o inversor, es una señal de alarma máxima."
@@ -1875,12 +1929,13 @@
         {
             numero: 27,
             ronda: 4,
+            dificultad: 2,
             pregunta: "¿Para qué sirve leer la Memoria si ya tienes el Balance y la PyG?",
             opciones: [
                 "Solo sirve para empresas cotizadas en bolsa",
                 "Aporta contexto imprescindible: criterios contables, riesgos, contingencias y hechos posteriores que los números solos no revelan",
                 "No sirve de nada, es un documento redundante",
-                "Es un requisito formal sin utilidad práctica",
+                "Es un requisito formal sin utilidad práctica"
             ],
             correcta: 1,
             explicacion: "La Memoria es el 'manual de instrucciones' de las cuentas. Sin ella, los números carecen de contexto: ¿qué método de amortización se usa?, ¿hay litigios pendientes? Un analista profesional SIEMPRE lee la memoria."
@@ -1888,12 +1943,13 @@
         {
             numero: 28,
             ronda: 4,
+            dificultad: 2,
             pregunta: "¿Qué determina si una empresa debe presentar sus cuentas en modelo Normal, Abreviado o PYMES?",
             opciones: [
                 "El sector de actividad",
                 "La decisión del director financiero",
                 "Superar durante dos ejercicios consecutivos al menos 2 de 3 umbrales: total activo, cifra de negocios y número medio de empleados",
-                "La opinión del auditor externo",
+                "La opinión del auditor externo"
             ],
             correcta: 2,
             explicacion: "La ley establece umbrales cuantitativos. Si una empresa supera al menos 2 de 3 límites durante dos ejercicios consecutivos, debe aplicar el modelo más completo. Las PYMES están exentas de presentar el EFE y el ECPN."
@@ -1901,12 +1957,13 @@
         {
             numero: 29,
             ronda: 4,
+            dificultad: 2,
             pregunta: "Mini-caso: Un inversor ve que en el ECPN de una empresa aparecen 'Ingresos y gastos reconocidos directamente en el Patrimonio Neto'. ¿Qué tipo de operaciones son?",
             opciones: [
                 "Las amortizaciones del inmovilizado",
                 "Los dividendos pagados a los accionistas",
                 "Ventas y compras habituales de la empresa",
-                "Ajustes de valor de activos financieros disponibles para la venta, subvenciones de capital, coberturas de flujos y diferencias de conversión",
+                "Ajustes de valor de activos financieros disponibles para la venta, subvenciones de capital, coberturas de flujos y diferencias de conversión"
             ],
             correcta: 3,
             explicacion: "Hay ciertos ingresos y gastos que el PGC obliga a registrar directamente en el Patrimonio Neto. Se contabilizan en las cuentas de los grupos 8 y 9: variaciones de valor de activos financieros, subvenciones de capital, diferencias de conversión."
@@ -1914,12 +1971,13 @@
         {
             numero: 30,
             ronda: 4,
+            dificultad: 2,
             pregunta: "¿Cuál es la diferencia fundamental entre el Balance y la Cuenta de Pérdidas y Ganancias en cuanto a su naturaleza temporal?",
             opciones: [
                 "Ambos son estados dinámicos que muestran flujos",
                 "La PyG muestra el patrimonio y el Balance muestra los flujos de caja",
                 "El Balance es una 'foto fija' de la situación patrimonial en una fecha; la PyG es un 'vídeo' que recoge la actividad (ingresos y gastos) durante todo el ejercicio",
-                "El Balance es un estado dinámico; la PyG es estática",
+                "El Balance es un estado dinámico; la PyG es estática"
             ],
             correcta: 2,
             explicacion: "El Balance es una fotografía de la situación patrimonial en un momento concreto. La PyG recoge todos los ingresos y gastos devengados a lo largo del ejercicio. Son complementarios: uno muestra dónde estamos y el otro cómo hemos llegado ahí."
@@ -1927,12 +1985,13 @@
         {
             numero: 31,
             ronda: 4,
+            dificultad: 3,
             pregunta: "Mini-caso: Eres el analista de un banco y una empresa te pide un préstamo. Te presenta unas cuentas SIN informe de auditoría. ¿Cómo interpretas esto?",
             opciones: [
                 "No importa si la empresa tiene beneficios",
                 "Las cuentas son igualmente fiables porque las firma el administrador",
                 "Debes exigir una auditoría voluntaria antes de conceder el préstamo: sin verificación independiente, la fiabilidad de la información es menor",
-                "Es normal, la mayoría de empresas no están obligadas a auditar",
+                "Es normal, la mayoría de empresas no están obligadas a auditar"
             ],
             correcta: 2,
             explicacion: "La auditoría externa proporciona una verificación independiente. Sin auditoría, la información depende exclusivamente de lo que la empresa declara. Para un banco que va a prestar dinero, la fiabilidad es crítica."
@@ -1940,12 +1999,13 @@
         {
             numero: 32,
             ronda: 4,
+            dificultad: 2,
             pregunta: "¿Qué estado financiero explica cómo la empresa genera y utiliza su efectivo durante el ejercicio?",
             opciones: [
                 "La Memoria",
                 "La Cuenta de Pérdidas y Ganancias",
                 "El Balance de Situación",
-                "El Estado de Flujos de Efectivo (EFE)",
+                "El Estado de Flujos de Efectivo (EFE)"
             ],
             correcta: 3,
             explicacion: "El EFE clasifica los movimientos de efectivo en tres categorías: flujos de explotación, flujos de inversión y flujos de financiación. Es el único estado que muestra la capacidad real de la empresa para generar caja."
@@ -1953,12 +2013,13 @@
         {
             numero: 33,
             ronda: 5,
+            dificultad: 2,
             pregunta: "Mini-caso: Una cadena de supermercados tiene Fondo de Maniobra negativo (-2 millones €). ¿Es necesariamente un problema?",
             opciones: [
                 "Es irrelevante si la empresa tiene beneficios",
                 "Sí, siempre indica riesgo de insolvencia",
                 "No: en grandes distribuidoras es habitual. Cobran al contado y pagan a proveedores a plazo, financiándose con la liquidez operativa",
-                "Solo es problema si supera el 10% del activo",
+                "Solo es problema si supera el 10% del activo"
             ],
             correcta: 2,
             explicacion: "Las grandes cadenas de distribución cobran al contado pero pagan a proveedores a plazo. El FM negativo no es riesgo sino ventaja competitiva: se financian gratis. Sin embargo, en la mayoría de sectores, es señal de alerta."
@@ -1966,38 +2027,43 @@
         {
             numero: 34,
             ronda: 5,
+            dificultad: 2,
             pregunta: "Ratio de Liquidez (AC/PC) = 0,7. ¿Qué le dices al gerente?",
             opciones: [
                 "Necesita más información, este ratio no dice nada útil",
                 "Por cada euro de deuda a corto plazo, solo tiene 0,70 € de activo corriente: riesgo de no poder atender pagos",
                 "El 70% de la empresa es líquida, buena señal",
-                "Tiene buena liquidez, puede estar tranquilo",
+                "Tiene buena liquidez, puede estar tranquilo"
             ],
             correcta: 1,
-            explicacion: "Un ratio de liquidez inferior a 1 significa que el AC no cubre el PC. Hay 0,70 € de activos líquidos por cada euro de deuda inmediata. Si los acreedores exigen cobrar, la empresa podría no poder atender sus compromisos."
+            explicacion: "Un ratio de liquidez inferior a 1 significa que el AC no cubre el PC. Hay 0,70 € de activos líquidos por cada euro de deuda inmediata. Si los acreedores exigen cobrar, la empresa podría no poder atender sus compromisos.",
+            grafico: '<div style="text-align:center;padding:15px"><div style="display:flex;gap:10px;justify-content:center;align-items:flex-end;height:100px"><div style="width:50px;background:#e53e3e;border-radius:4px 4px 0 0;height:70px;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold">0,70€</div><div style="width:50px;background:#3182ce;border-radius:4px 4px 0 0;height:100px;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold">1,00€</div></div><div style="display:flex;gap:10px;justify-content:center;font-size:11px;color:#666"><div style="width:50px;text-align:center">AC</div><div style="width:50px;text-align:center">PC</div></div><div style="font-size:13px;color:#e53e3e;margin-top:8px;font-weight:bold">Ratio = 0,7 → Riesgo de impago</div></div>'
         },
         {
             numero: 35,
             ronda: 5,
+            dificultad: 3,
             pregunta: "Mini-caso: EPSILON S.A. tiene ROA = 12% y su coste medio de deuda es del 8%. ¿El apalancamiento financiero beneficia o perjudica al accionista?",
             opciones: [
                 "Lo beneficia: los activos generan más (12%) de lo que cuesta la deuda (8%), y la diferencia eleva el ROE del accionista",
                 "No se puede saber sin conocer el ROE exacto",
                 "Es neutro: ROA y coste de deuda son independientes",
-                "Lo perjudica: la empresa tiene demasiada deuda",
+                "Lo perjudica: la empresa tiene demasiada deuda"
             ],
             correcta: 0,
-            explicacion: "El apalancamiento financiero es POSITIVO cuando ROA > coste de la deuda. Cada euro prestado al 8% se invierte en activos que rinden un 12%. La diferencia beneficia al accionista, elevando su ROE."
+            explicacion: "El apalancamiento financiero es POSITIVO cuando ROA > coste de la deuda. Cada euro prestado al 8% se invierte en activos que rinden un 12%. La diferencia beneficia al accionista, elevando su ROE.",
+            grafico: '<div style="text-align:center;padding:15px"><div style="display:inline-block;text-align:left;font-size:13px"><div style="padding:8px;background:#e8f5e9;border-radius:6px;margin-bottom:5px">ROA = <strong style="color:#2e7d32">12%</strong> (rentabilidad del activo)</div><div style="padding:8px;background:#ffebee;border-radius:6px;margin-bottom:5px">Coste deuda = <strong style="color:#e53e3e">8%</strong></div><div style="padding:8px;background:#e3f2fd;border-radius:6px">Diferencia = <strong style="color:#1976d2">+4%</strong> → Apalancamiento POSITIVO ✓</div></div></div>'
         },
         {
             numero: 36,
             ronda: 5,
+            dificultad: 3,
             pregunta: "Mini-caso: Dos empresas del mismo sector. SANA S.A. tiene PN = 60% del activo. DEUDA S.L. tiene PN = 15%. ¿A cuál le recomendarías menor tipo de interés como banco?",
             opciones: [
                 "Al que tenga mayor facturación",
                 "A DEUDA S.L., porque al tener más deuda genera más interés para el banco",
                 "A SANA S.A.: mayor capitalización = menor riesgo = menor tipo de interés",
-                "Da igual: el tipo de interés depende solo del BCE",
+                "Da igual: el tipo de interés depende solo del BCE"
             ],
             correcta: 2,
             explicacion: "La ratio de capitalización es un indicador clave de riesgo crediticio. Un PN alto (60%) significa que los propietarios tienen mucho 'skin in the game'. Mayor solidez patrimonial = menor riesgo para el banco = menor tipo de interés."
@@ -2005,12 +2071,13 @@
         {
             numero: 37,
             ronda: 5,
+            dificultad: 2,
             pregunta: "¿Cuáles son las principales LIMITACIONES del análisis contable basado en ratios?",
             opciones: [
                 "Trabaja con datos del pasado, no captura intangibles clave (marca, talento) y puede ser incomparable entre empresas por diferencias en criterios contables",
                 "La única limitación es que necesita un auditor",
                 "No tiene limitaciones si se hace bien",
-                "Solo funciona para empresas grandes",
+                "Solo funciona para empresas grandes"
             ],
             correcta: 0,
             explicacion: "El análisis contable tiene limitaciones estructurales: trabaja con datos históricos, no captura activos intangibles clave y puede ser incomparable entre empresas. Debe complementarse con análisis cualitativo."
@@ -2018,25 +2085,28 @@
         {
             numero: 38,
             ronda: 5,
+            dificultad: 3,
             pregunta: "Mini-caso: Una empresa tiene Activo Total 800.000 €, Pasivo Total 600.000 €, AC 250.000 €, PC 300.000 €. ¿Cuál es el diagnóstico correcto?",
             opciones: [
                 "Imposible determinarlo sin la PyG",
                 "Todo bien: el activo total supera al pasivo total, la empresa es solvente",
                 "Todo mal: la empresa está en quiebra técnica",
-                "Solvente a largo plazo (AT > PT) pero con problemas de liquidez a corto plazo (AC < PC, FM negativo de -50.000 €)",
+                "Solvente a largo plazo (AT > PT) pero con problemas de liquidez a corto plazo (AC < PC, FM negativo de -50.000 €)"
             ],
             correcta: 3,
-            explicacion: "El Ratio de Solvencia es superior a 1, lo que indica solvencia global. Pero FM negativo = -50.000 €. La empresa puede ser solvente a largo plazo pero tener problemas serios de liquidez inmediata."
+            explicacion: "El Ratio de Solvencia es superior a 1, lo que indica solvencia global. Pero FM negativo = -50.000 €. La empresa puede ser solvente a largo plazo pero tener problemas serios de liquidez inmediata.",
+            grafico: '<div style="text-align:center;padding:10px"><table style="margin:0 auto;border-collapse:collapse;font-size:13px"><tr style="background:#e8f5e9"><td style="padding:6px 12px;font-weight:bold">AT = 800.000</td><td style="padding:6px 12px;font-weight:bold">PT = 600.000</td><td style="padding:6px 12px;color:#2e7d32">✓ Solvente</td></tr><tr style="background:#ffebee"><td style="padding:6px 12px;font-weight:bold">AC = 250.000</td><td style="padding:6px 12px;font-weight:bold">PC = 300.000</td><td style="padding:6px 12px;color:#e53e3e">✗ FM = -50.000</td></tr></table><div style="font-size:13px;color:#666;margin-top:8px">Solvente a L/P pero con problemas de liquidez a C/P</div></div>'
         },
         {
             numero: 39,
             ronda: 5,
+            dificultad: 2,
             pregunta: "¿Qué mide el Ratio de Solvencia (Activo Total / Pasivo Total) y cómo se interpreta un valor de 1,8?",
             opciones: [
                 "Mide la eficiencia operativa de la empresa",
                 "Mide cuántas veces los activos respaldan cada euro de deuda. Un valor de 1,8 indica que el activo es 1,8 veces el pasivo, con capacidad para cubrir deudas con margen",
                 "Mide la liquidez a corto plazo; 1,8 es aceptable",
-                "Mide la rentabilidad; 1,8 = 80% de rentabilidad sobre activos",
+                "Mide la rentabilidad; 1,8 = 80% de rentabilidad sobre activos"
             ],
             correcta: 1,
             explicacion: "El Ratio de Solvencia indica cuántas veces los activos totales cubren las deudas totales. Un valor de 1,8 significa que por cada euro de deuda hay 1,8 € de activo. NO debe confundirse con el Ratio de Liquidez."
@@ -2044,734 +2114,506 @@
         {
             numero: 40,
             ronda: 5,
+            dificultad: 3,
             pregunta: "Mini-caso: La empresa A tiene un Beneficio Neto de 200.000 € con PN de 2.000.000 €. La empresa B tiene un Beneficio Neto de 100.000 € con PN de 500.000 €. ¿Cuál genera más valor para el accionista?",
             opciones: [
                 "Ambas generan el mismo valor porque son proporcionales",
                 "La empresa B: su ROE (100.000/500.000 = 20%) es el doble que el de A (200.000/2.000.000 = 10%)",
                 "No se puede comparar sin conocer el sector",
-                "La empresa A, porque tiene más beneficio en términos absolutos (200.000 > 100.000)",
+                "La empresa A, porque tiene más beneficio en términos absolutos (200.000 > 100.000)"
             ],
             correcta: 1,
-            explicacion: "El ROE mide cuánto gana la empresa por cada euro invertido por los accionistas. Aunque A gana más en absoluto, su ROE es solo del 10%. B ofrece un 20% de rentabilidad. Para el accionista, cada euro invertido en B genera el doble que en A."
-        },
-    ];
+            explicacion: "El ROE mide cuánto gana la empresa por cada euro invertido por los accionistas. Aunque A gana más en absoluto, su ROE es solo del 10%. B ofrece un 20% de rentabilidad. Para el accionista, cada euro invertido en B genera el doble que en A.",
+            grafico: '<div style="text-align:center;padding:10px"><table style="margin:0 auto;border-collapse:collapse;font-size:13px"><tr><th style="padding:6px 12px"></th><th style="padding:6px 12px">Empresa A</th><th style="padding:6px 12px">Empresa B</th></tr><tr><td style="padding:6px 12px;font-weight:bold">Beneficio</td><td style="padding:6px 12px">200.000 €</td><td style="padding:6px 12px">100.000 €</td></tr><tr><td style="padding:6px 12px;font-weight:bold">PN</td><td style="padding:6px 12px">2.000.000 €</td><td style="padding:6px 12px">500.000 €</td></tr><tr style="background:#e3f2fd"><td style="padding:6px 12px;font-weight:bold">ROE</td><td style="padding:6px 12px">10%</td><td style="padding:6px 12px;color:#1976d2;font-weight:bold">20% ✓</td></tr></table></div>'
+        }
+        ];
 
-        // ============= STATE =============
-        const appState = {
-            currentUser: null,
-            isTeacher: false,
-            sessionId: null,
-            currentQuestion: 0,
-            phase: 'registration',
-            allStudents: {},
-            allVotes: {},
-            votingOpen: false,
-            quizStarted: false,
-            quizComplete: false,
-            studentVote: null,
-            studentDisplayName: null
-        };
+        // ============= STATE VARIABLES =============
+        let sessionId = null;
+        let studentId = null;
+        let isTeacher = true;
+        let currentQuestionIndex = 0;
+        let currentRound = 1;
+        let studentData = {};
+        let responses = {};
 
         // ============= INITIALIZATION =============
-        function initApp() {
-            const params = new URLSearchParams(window.location.search);
-            const sessionId = params.get('session');
+        window.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
 
-            if (sessionId) {
-                // ESTUDIANTE
-                appState.isTeacher = false;
-                appState.sessionId = sessionId;
-                showScreen('studentRegistration');
-            } else {
-                // PROFESOR
-                appState.isTeacher = true;
-                appState.sessionId = 'quiz_session_' + Date.now();
-                initTeacherView();
+        function initializeApp() {
+            checkSession();
+            generateQR();
+            setupEventListeners();
+            displayStartScreen();
+            listenToStudents();
+        }
+
+        function checkSession() {
+            const params = new URLSearchParams(window.location.search);
+            sessionId = params.get('session') || 'default-' + Date.now();
+            isTeacher = !params.get('session');
+
+            if (!isTeacher) {
+                // Check localStorage for existing registration
+                const savedStudentId = localStorage.getItem(`studentId_${sessionId}`);
+                if (savedStudentId) {
+                    studentId = savedStudentId;
+                    showStudentWaiting();
+                } else {
+                    showScreen('registration-screen');
+                }
             }
         }
 
-        function initTeacherView() {
-            // Inicializar en Firebase
-            db.ref(appState.sessionId + '/state').set({
-                phase: 'registration',
-                currentQuestion: 0,
-                votingOpen: false,
-                quizStarted: false,
-                quizComplete: false
-            });
-
-            // Generar QR
-            const studentUrl = window.location.origin + window.location.pathname + '?session=' + appState.sessionId;
-            document.getElementById('studentUrl').textContent = studentUrl;
-
-            // Usar API de QR (qrserver.com)
-            const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=' + encodeURIComponent(studentUrl);
+        function generateQR() {
+            const studentUrl = window.location.origin + window.location.pathname + '?session=' + sessionId;
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(studentUrl)}`;
             document.getElementById('qrCode').src = qrUrl;
-
-            // Escuchar estudiantes
-            db.ref(appState.sessionId + '/students').on('value', (snapshot) => {
-                appState.allStudents = snapshot.val() || {};
-                updateStudentList();
-                updatePlayerCount();
-            });
-
-            // Don Balance speech
-            document.getElementById('startSpeech').textContent = DON_BALANCE.start;
-
-            showScreen('teacherStart');
+            document.getElementById('studentUrl').textContent = studentUrl;
         }
 
-        function updateStudentList() {
+        function setupEventListeners() {
+            document.getElementById('donBalanceStart').textContent = DON_BALANCE.start;
+        }
+
+        function registerStudent() {
+            const name = document.getElementById('studentName').value.trim();
+            const surname = document.getElementById('studentSurname').value.trim();
+            const group = document.getElementById('studentGroup').value.trim();
+
+            if (!name || !surname) {
+                showError('registrationError', 'Por favor, completa todos los campos');
+                return;
+            }
+
+            studentId = 'student_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            const fullName = surname + ', ' + name;
+
+            localStorage.setItem(`studentId_${sessionId}`, studentId);
+            localStorage.setItem(`studentName_${sessionId}`, fullName);
+            localStorage.setItem(`studentGroup_${sessionId}`, group);
+
+            const studentRef = db.ref(`sessions/${sessionId}/students/${studentId}`);
+            studentRef.set({
+                name: fullName,
+                group: group,
+                registered: true,
+                joinedAt: new Date().toISOString()
+            }, (error) => {
+                if (error) {
+                    showError('registrationError', 'Error al registrarse. Intenta de nuevo.');
+                } else {
+                    showSuccess('registrationSuccess', '¡Registro exitoso! Aguarda al profesor...');
+                    setTimeout(() => showStudentWaiting(), 1000);
+                }
+            });
+        }
+
+        function showStudentWaiting() {
+            const fullName = localStorage.getItem(`studentName_${sessionId}`) || 'Estudiante';
+            document.getElementById('waitingStudentName').textContent = fullName.split(',')[1]?.trim() || fullName;
+            showScreen('waiting-screen');
+            listenForQuestionStart();
+        }
+
+        function listenForQuestionStart() {
+            const sessionRef = db.ref(`sessions/${sessionId}/currentQuestion`);
+            sessionRef.on('value', (snapshot) => {
+                const data = snapshot.val();
+                if (data && data.index !== undefined) {
+                    currentQuestionIndex = data.index;
+                    currentRound = QUESTIONS[currentQuestionIndex].ronda;
+                    showStudentVoting();
+                }
+            });
+        }
+
+        function listenToStudents() {
+            if (!isTeacher) return;
+
+            const studentsRef = db.ref(`sessions/${sessionId}/students`);
+            studentsRef.on('value', (snapshot) => {
+                studentData = snapshot.val() || {};
+                updateStudentsList();
+                updatePlayerCount();
+            });
+        }
+
+        function updateStudentsList() {
             const list = document.getElementById('studentsList');
-            const badge = document.getElementById('studentBadge');
-            const count = Object.keys(appState.allStudents).length;
-
-            badge.textContent = count;
-            document.getElementById('startBtn').disabled = count === 0;
-
-            list.innerHTML = Object.values(appState.allStudents)
-                .sort((a, b) => a.timestamp - b.timestamp)
-                .map(student => `<div class="student-item">${student.displayName}</div>`)
-                .join('');
+            list.innerHTML = '';
+            Object.values(studentData).forEach(student => {
+                const item = document.createElement('div');
+                item.className = 'student-item';
+                item.textContent = student.name + (student.group ? ' (' + student.group + ')' : '');
+                list.appendChild(item);
+            });
         }
 
         function updatePlayerCount() {
-            const count = Object.keys(appState.allStudents).length;
-            document.getElementById('playerCount').textContent = count;
-            const leftCounter = document.getElementById('playerCountLeft');
-            if (leftCounter) leftCounter.textContent = count;
+            const count = Object.keys(studentData).length;
+            document.getElementById('studentCount').textContent = count;
+            document.getElementById('playersCounter').textContent = count + ' jugador' + (count !== 1 ? 'es' : '');
         }
 
-        // ============= STUDENT REGISTRATION =============
-        async function registerStudent(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('studentName').value.trim();
-            const initial = document.getElementById('studentInitial').value.toUpperCase().trim();
-            const errorMsg = document.getElementById('errorMessage');
-            const successMsg = document.getElementById('successMessage');
-
-            if (!name || !initial || initial.length !== 1) {
-                errorMsg.textContent = '❌ Debes ingresar un nombre válido e inicial.';
-                errorMsg.classList.add('show');
-                return;
-            }
-
-            // Verificar duplicados
-            const existingStudent = Object.values(appState.allStudents || {}).find(
-                s => s.name.toLowerCase() === name.toLowerCase() && s.initial === initial
-            );
-
-            if (existingStudent) {
-                errorMsg.textContent = `Ya hay un/a ${name} ${initial} registrado/a. Prueba con tu segundo nombre o añade un número.`;
-                errorMsg.classList.add('show');
-                successMsg.classList.remove('show');
-                return;
-            }
-
-            errorMsg.classList.remove('show');
-
-            // Registrar
-            const displayName = `${name} ${initial}.`;
-            const studentRef = db.ref(appState.sessionId + '/students').push();
-            const studentId = studentRef.key;
-
-            await studentRef.set({
-                name: name,
-                initial: initial,
-                displayName: displayName,
-                timestamp: firebase.database.ServerValue.TIMESTAMP
-            });
-
-            appState.currentUser = studentId;
-            appState.studentDisplayName = displayName;
-
-            successMsg.textContent = `✓ ¡Bienvenido/a, ${displayName}!`;
-            successMsg.classList.add('show');
-
-            setTimeout(() => {
-                listenForQuizStart();
-            }, 500);
-        }
-
-        function listenForQuizStart() {
-            db.ref(appState.sessionId + '/state').on('value', (snapshot) => {
-                const state = snapshot.val();
-                if (state && state.quizStarted && appState.phase !== 'roundTransition') {
-                    appState.phase = state.phase;
-                    showScreen('studentWaiting');
-                    document.getElementById('waitingName').textContent = appState.studentDisplayName;
-                    listenForPhaseChanges();
-                }
-            });
-        }
-
-        function listenForPhaseChanges() {
-            db.ref(appState.sessionId + '/state').on('value', (snapshot) => {
-                const state = snapshot.val();
-                if (!state) return;
-
-                appState.phase = state.phase;
-                appState.currentQuestion = state.currentQuestion || 0;
-                appState.votingOpen = state.votingOpen || false;
-
-                if (state.phase === 'roundTransition') {
-                    // Profesor: mostrar transición
-                    if (appState.isTeacher) {
-                        showTeacherRoundTransition();
-                    } else {
-                        // Estudiante: seguir esperando
-                    }
-                } else if (state.phase === 'question') {
-                    appState.studentVote = null;
-                    showScreen(appState.isTeacher ? 'teacherQuestion' : 'studentVoting');
-                    if (appState.isTeacher) {
-                        showTeacherQuestion();
-                    } else {
-                        showStudentQuestion();
-                    }
-                } else if (state.phase === 'results') {
-                    showScreen(appState.isTeacher ? 'teacherResults' : 'studentResult');
-                    if (appState.isTeacher) {
-                        showTeacherResults();
-                    } else {
-                        showStudentResult();
-                    }
-                } else if (state.phase === 'explanation') {
-                    showScreen(appState.isTeacher ? 'teacherExplanation' : 'studentResult');
-                    if (appState.isTeacher) {
-                        showTeacherExplanation();
-                    }
-                } else if (state.phase === 'finalStats') {
-                    if (appState.isTeacher) {
-                        showFinalStats();
-                    } else {
-                        showStudentFinalStats();
-                    }
-                }
-            });
-        }
-
-        // ============= TEACHER FUNCTIONS =============
         function startQuiz() {
-            appState.quizStarted = true;
-            appState.currentQuestion = 0;
-            db.ref(appState.sessionId + '/state').update({
-                quizStarted: true,
-                phase: 'roundTransition',
-                currentQuestion: 0
-            });
-
-            // Esperar un segundo y mostrar transición
-            setTimeout(() => {
-                showTeacherRoundTransition();
-            }, 500);
+            currentQuestionIndex = 0;
+            currentRound = 1;
+            db.ref(`sessions/${sessionId}/quizStarted`).set(true);
+            showRoundTransition();
         }
 
-        function showTeacherRoundTransition() {
-            const round = QUESTIONS[appState.currentQuestion].ronda;
-            const roundData = ROUNDS[round];
-
-            document.getElementById('transitionEmoji').textContent = roundData.emoji;
-            document.getElementById('transitionTitle').textContent = roundData.name;
-            document.getElementById('transitionDescription').textContent = roundData.topic;
-            document.getElementById('transitionSpeech').textContent = DON_BALANCE.roundTransition[round];
-
-            showScreen('roundTransition');
-
-            // Auto-avanzar después de 3 segundos
-            setTimeout(() => {
-                db.ref(appState.sessionId + '/state').update({
-                    phase: 'question',
-                    votingOpen: true,
-                    currentQuestion: appState.currentQuestion
-                });
-                showTeacherQuestion();
-            }, 3000);
-        }
-
-        function showTeacherQuestion() {
-            const q = QUESTIONS[appState.currentQuestion];
-            const progress = appState.currentQuestion + 1;
-
-            // Actualizar progreso
-            document.getElementById('progressText').textContent = `${progress}/40`;
-            const percent = (progress / 40) * 100;
-            document.getElementById('progressFill').style.width = percent + '%';
-
-            // Pregunta
-            const roundData = ROUNDS[q.ronda];
-            document.getElementById('questionRoundEmoji').textContent = roundData.emoji;
-            document.getElementById('questionRoundEmoji2').textContent = roundData.emoji;
-            document.getElementById('questionRoundName').textContent = roundData.name;
-            document.getElementById('questionNumber').textContent = `Pregunta ${progress}`;
-            document.getElementById('questionText').textContent = q.pregunta;
-
-            // Opciones
-            const grid = document.getElementById('optionsGrid');
-            grid.innerHTML = q.opciones.map((opcion, idx) => `
-                <div class="option-card">
-                    <span class="option-letter">${String.fromCharCode(65 + idx)})</span>
-                    <span class="option-text">${opcion}</span>
-                </div>
-            `).join('');
-
-            showScreen('teacherQuestion');
-
-            // Escuchar votos
-            listenForVotes();
-
-            // Actualizar contador cada segundo
-            const voteInterval = setInterval(() => {
-                if (appState.phase !== 'question') {
-                    clearInterval(voteInterval);
-                    return;
-                }
-                updateVoteCounter();
-            }, 1000);
-        }
-
-        function listenForVotes() {
-            const votePath = appState.sessionId + '/votes/' + appState.currentQuestion;
-            db.ref(votePath).on('value', (snapshot) => {
-                appState.allVotes[appState.currentQuestion] = snapshot.val() || {};
-                updateVoteCounter();
-            });
-        }
-
-        function updateVoteCounter() {
-            const totalStudents = Object.keys(appState.allStudents).length;
-            const votesForQuestion = appState.allVotes[appState.currentQuestion] || {};
-            const votedStudents = Object.keys(votesForQuestion).length;
-
-            document.getElementById('voteCounter').textContent = `🗳️ ${votedStudents} de ${totalStudents} han votado`;
-        }
-
-        function closeVoting() {
-            appState.votingOpen = false;
-            db.ref(appState.sessionId + '/state').update({
-                phase: 'results',
-                votingOpen: false
-            });
-            showTeacherResults();
-        }
-
-        function showTeacherResults() {
-            const q = QUESTIONS[appState.currentQuestion];
-            const votesForQuestion = appState.allVotes[appState.currentQuestion] || {};
-            const totalVotes = Object.keys(votesForQuestion).length;
-
-            // Calcular respuestas
-            const voteCounts = [0, 0, 0, 0];
-            Object.values(votesForQuestion).forEach(vote => {
-                if (vote.vote >= 0 && vote.vote <= 3) {
-                    voteCounts[vote.vote]++;
-                }
-            });
-
-            const correctCount = voteCounts[q.correcta];
-            const correctPercent = totalVotes > 0 ? Math.round((correctCount / totalVotes) * 100) : 0;
-
-            document.getElementById('resultsQuestionText').textContent = q.pregunta;
-
-            const resultsGrid = document.getElementById('resultsGrid');
-            resultsGrid.innerHTML = q.opciones.map((opcion, idx) => {
-                const count = voteCounts[idx];
-                const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
-                const barWidth = totalVotes > 0 ? (count / totalVotes) * 100 : 0;
-                const isCorrect = idx === q.correcta;
-
-                return `
-                    <div class="result-option ${isCorrect ? 'correct' : 'incorrect'}">
-                        <div class="result-header">
-                            <span>${String.fromCharCode(65 + idx)}) ${opcion.substring(0, 30)}...</span>
-                            <span class="result-indicator">${isCorrect ? '✓' : ''}</span>
-                        </div>
-                        <div class="result-bar">
-                            <div class="result-bar-fill" style="width: ${barWidth}%; background: ${getBarColor(idx)};"></div>
-                        </div>
-                        <div class="result-stats">${count} votos (${percent}%)</div>
-                    </div>
-                `;
-            }).join('');
-
-            // Reacción Don Balance
-            let reaction;
-            if (correctPercent >= 70) {
-                reaction = DON_BALANCE.results.high;
-            } else if (correctPercent >= 40) {
-                reaction = DON_BALANCE.results.medium;
-            } else if (correctPercent > 0) {
-                reaction = DON_BALANCE.results.low;
-            } else {
-                reaction = DON_BALANCE.results.zero;
-            }
-            document.getElementById('donReaction').textContent = reaction;
-
-            showScreen('teacherResults');
-        }
-
-        function getBarColor(idx) {
-            const colors = ['#e53e3e', '#3182ce', '#ecc94b', '#38a169'];
-            return colors[idx] || '#667eea';
-        }
-
-        function showExplanation() {
-            const q = QUESTIONS[appState.currentQuestion];
-            const votesForQuestion = appState.allVotes[appState.currentQuestion] || {};
-            const totalVotes = Object.keys(votesForQuestion).length;
-
-            const voteCounts = [0, 0, 0, 0];
-            Object.values(votesForQuestion).forEach(vote => {
-                if (vote.vote >= 0 && vote.vote <= 3) {
-                    voteCounts[vote.vote]++;
-                }
-            });
-
-            // Header
-            const roundData = ROUNDS[q.ronda];
-            document.getElementById('explanationRoundEmoji').textContent = roundData.emoji;
-            document.getElementById('explanationQuestionInfo').textContent = `Pregunta ${appState.currentQuestion + 1}/40 - ${roundData.name}`;
-
-            // Mini gráfico
-            const barHtml = voteCounts.map((count, idx) => {
-                const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
-                const height = Math.max(20, (percent / 100) * 60);
-                return `<div class="summary-bar" style="height: ${height}px; ${idx === q.correcta ? 'border: 3px solid white;' : ''}">${percent}%</div>`;
-            }).join('');
-            document.getElementById('resultsSummaryBar').innerHTML = barHtml;
-
-            // Respuesta correcta
-            document.getElementById('correctAnswerBanner').textContent = `✓ Respuesta correcta: ${String.fromCharCode(65 + q.correcta)}) ${q.opciones[q.correcta]}`;
-
-            // Explicación
-            document.getElementById('explanationText').textContent = q.explicacion;
-            document.getElementById('explanationDonComment').textContent = '💬 ' + getDonBalanceExtraComment(q.ronda);
-
-            // Botón siguiente
-            const isLast = appState.currentQuestion === QUESTIONS.length - 1;
-            document.getElementById('nextButton').innerHTML = isLast ? '🏆 VER RESULTADOS FINALES' : '➡️ SIGUIENTE PREGUNTA';
-
-            db.ref(appState.sessionId + '/state').update({
-                phase: 'explanation'
-            });
-
-            showScreen('teacherExplanation');
-        }
-
-        function getDonBalanceExtraComment(round) {
-            const comments = {
-                1: "Los principios no son sugerencias, son leyes.",
-                2: "El ciclo contable es como una danza: cada paso tiene su lugar.",
-                3: "El balance nunca miente, solo los que lo falsifican.",
-                4: "Las auditorías son donde se descubren las mentiras.",
-                5: "Los ratios no engañan... pero hay que saber interpretarlos."
-            };
-            return comments[round] || "¡Bien pensado!";
+        function showRoundTransition() {
+            const round = ROUNDS[currentRound];
+            document.getElementById('roundEmoji').textContent = round.emoji;
+            document.getElementById('roundName').textContent = round.name;
+            document.getElementById('roundDescription').textContent = DON_BALANCE.roundTransition[currentRound];
+            showScreen('round-transition');
         }
 
         function nextQuestion() {
-            appState.currentQuestion++;
+            const question = QUESTIONS[currentQuestionIndex];
 
-            if (appState.currentQuestion >= QUESTIONS.length) {
-                // Quiz terminado
-                db.ref(appState.sessionId + '/state').update({
-                    phase: 'finalStats',
-                    quizComplete: true
-                });
-                setTimeout(() => showFinalStats(), 500);
-            } else {
-                // Siguiente ronda?
-                const currentRound = QUESTIONS[appState.currentQuestion - 1].ronda;
-                const nextRound = QUESTIONS[appState.currentQuestion].ronda;
-
-                if (currentRound !== nextRound) {
-                    // Nueva ronda: mostrar transición
-                    db.ref(appState.sessionId + '/state').update({
-                        phase: 'roundTransition',
-                        currentQuestion: appState.currentQuestion
-                    });
-                    setTimeout(() => showTeacherRoundTransition(), 500);
-                } else {
-                    // Misma ronda: siguiente pregunta directo
-                    db.ref(appState.sessionId + '/state').update({
-                        phase: 'question',
-                        votingOpen: true,
-                        currentQuestion: appState.currentQuestion
-                    });
-                    setTimeout(() => showTeacherQuestion(), 500);
-                }
+            if (question.ronda !== currentRound && currentQuestionIndex > 0) {
+                showRoundTransition();
+                return;
             }
+
+            displayTeacherQuestion();
+            broadcastQuestion();
         }
 
-        function showFinalStats() {
-            const allStudents = appState.allStudents || {};
-            const allVotes = appState.allVotes || {};
-            const studentScores = {};
+        function displayTeacherQuestion() {
+            const question = QUESTIONS[currentQuestionIndex];
+            document.getElementById('questionText').textContent = question.pregunta;
+            document.getElementById('questionNumber').textContent = 'Pregunta ' + (currentQuestionIndex + 1) + ' de 40';
+            document.getElementById('questionRoundEmoji').textContent = ROUNDS[question.ronda].emoji;
+            document.getElementById('questionRoundName').textContent = ROUNDS[question.ronda].name;
 
-            // Calcular puntajes
-            Object.entries(allStudents).forEach(([id, student]) => {
-                studentScores[id] = {
-                    name: student.displayName,
-                    score: 0,
-                    byRound: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
-                };
+            const diffIndicator = document.getElementById('difficultyIndicator');
+            diffIndicator.innerHTML = '';
+            for (let i = 0; i < question.dificultad; i++) {
+                const star = document.createElement('span');
+                star.className = 'difficulty-star';
+                star.textContent = '★';
+                diffIndicator.appendChild(star);
+            }
+
+            const grid = document.getElementById('optionsGrid');
+            grid.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            question.opciones.forEach((option, idx) => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                card.innerHTML = `<span class="option-letter">${letters[idx]}</span><span class="option-text">${option}</span>`;
+                grid.appendChild(card);
             });
 
-            QUESTIONS.forEach((q, idx) => {
-                const round = q.ronda;
-                const votesForQuestion = allVotes[idx] || {};
+            const progress = ((currentQuestionIndex + 1) / 40) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = (currentQuestionIndex + 1) + '/40';
 
-                Object.entries(votesForQuestion).forEach(([studentId, vote]) => {
-                    if (studentScores[studentId] && vote.vote === q.correcta) {
-                        studentScores[studentId].score++;
-                        studentScores[studentId].byRound[round]++;
-                    }
-                });
-            });
+            responses[currentQuestionIndex] = {};
+            updateVoteCount();
 
-            const ranked = Object.entries(studentScores)
-                .map(([id, data]) => ({id, ...data}))
-                .sort((a, b) => b.score - a.score);
-
-            // Estadísticas por ronda
-            const roundStats = {1: {total: 0, correct: 0}, 2: {total: 0, correct: 0}, 3: {total: 0, correct: 0}, 4: {total: 0, correct: 0}, 5: {total: 0, correct: 0}};
-            QUESTIONS.forEach((q, idx) => {
-                roundStats[q.ronda].total++;
-                const votesForQuestion = allVotes[idx] || {};
-                const correctVotes = Object.values(votesForQuestion).filter(v => v.vote === q.correcta).length;
-                roundStats[q.ronda].correct += correctVotes;
-            });
-
-            const roundPercents = {};
-            Object.entries(roundStats).forEach(([round, data]) => {
-                const totalVotes = Object.keys(allStudents).length * (QUESTIONS.filter(q => q.ronda == round).length);
-                roundPercents[round] = totalVotes > 0 ? Math.round((data.correct / totalVotes) * 100) : 0;
-            });
-
-            const totalCorrect = ranked.reduce((sum, s) => sum + s.score, 0);
-            const bestRound = Object.entries(roundPercents).reduce((a, b) => b[1] > a[1] ? b : a)[0];
-            const hardestRound = Object.entries(roundPercents).reduce((a, b) => b[1] < a[1] ? b : a)[0];
-            const classAvg = Object.keys(allStudents).length > 0 ? Math.round((totalCorrect / (40 * Object.keys(allStudents).length)) * 100) : 0;
-
-            document.getElementById('classAvg').textContent = classAvg + '%';
-            document.getElementById('bestRound').textContent = ROUNDS[bestRound].emoji;
-            document.getElementById('hardestRound').textContent = ROUNDS[hardestRound].emoji;
-            document.getElementById('finalSpeech').textContent = DON_BALANCE.end;
-
-            // Gráfico
-            const chartHTML = Object.entries(roundPercents).map(([round, percent]) => `
-                <div class="bar-group">
-                    <div class="bar" style="height: ${Math.max(20, percent * 2)}px;"></div>
-                    <span class="bar-label">${ROUNDS[round].emoji}</span>
-                    <span class="bar-percent">${percent}%</span>
-                </div>
-            `).join('');
-            document.getElementById('roundChart').innerHTML = chartHTML;
-
-            // Ranking
-            const rankingHTML = ranked.slice(0, 5).map((student, idx) => `
-                <tr>
-                    <td><span class="medal">${['🥇', '🥈', '🥉', '4️⃣', '5️⃣'][idx]}</span></td>
-                    <td>${student.name}</td>
-                    <td>${student.score}/40</td>
-                    <td>${Math.round((student.score / 40) * 100)}%</td>
-                </tr>
-            `).join('');
-            document.getElementById('rankingBody').innerHTML = rankingHTML;
-
-            // Preguntas más difíciles
-            const questionStats = {};
-            QUESTIONS.forEach((q, idx) => {
-                const votesForQuestion = allVotes[idx] || {};
-                const correctVotes = Object.values(votesForQuestion).filter(v => v.vote === q.correcta).length;
-                const totalVotes = Object.keys(votesForQuestion).length;
-                questionStats[idx] = {
-                    question: q,
-                    correct: totalVotes > 0 ? Math.round((correctVotes / totalVotes) * 100) : 0
-                };
-            });
-
-            const hardestHTML = Object.entries(questionStats)
-                .map(([idx, data]) => ({idx, ...data}))
-                .sort((a, b) => a.correct - b.correct)
-                .slice(0, 5)
-                .map(q => `
-                    <tr>
-                        <td>${q.question.numero}</td>
-                        <td>${ROUNDS[q.question.ronda].name}</td>
-                        <td>${q.correct}%</td>
-                    </tr>
-                `).join('');
-            document.getElementById('hardestQuestionsBody').innerHTML = hardestHTML;
-
-            const easiestHTML = Object.entries(questionStats)
-                .map(([idx, data]) => ({idx, ...data}))
-                .sort((a, b) => b.correct - a.correct)
-                .slice(0, 5)
-                .map(q => `
-                    <tr>
-                        <td>${q.question.numero}</td>
-                        <td>${ROUNDS[q.question.ronda].name}</td>
-                        <td>${q.correct}%</td>
-                    </tr>
-                `).join('');
-            document.getElementById('easiestQuestionsBody').innerHTML = easiestHTML;
-
-            showScreen('finalResults');
+            showScreen('question-screen');
         }
 
-        function downloadCSV() {
-            const allStudents = appState.allStudents || {};
-            const allVotes = appState.allVotes || {};
-            const studentScores = {};
-
-            Object.entries(allStudents).forEach(([id, student]) => {
-                studentScores[id] = {
-                    name: student.displayName,
-                    score: 0,
-                    byRound: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
-                };
+        function broadcastQuestion() {
+            db.ref(`sessions/${sessionId}/currentQuestion`).set({
+                index: currentQuestionIndex,
+                text: QUESTIONS[currentQuestionIndex].pregunta
             });
-
-            QUESTIONS.forEach((q, idx) => {
-                const round = q.ronda;
-                const votesForQuestion = allVotes[idx] || {};
-
-                Object.entries(votesForQuestion).forEach(([studentId, vote]) => {
-                    if (studentScores[studentId] && vote.vote === q.correcta) {
-                        studentScores[studentId].score++;
-                        studentScores[studentId].byRound[round]++;
-                    }
-                });
-            });
-
-            const rows = [
-                ['Nombre', 'Puntuación', 'Porcentaje', 'Ronda1', 'Ronda2', 'Ronda3', 'Ronda4', 'Ronda5']
-            ];
-
-            Object.entries(studentScores)
-                .sort((a, b) => b[1].score - a[1].score)
-                .forEach(([id, data]) => {
-                    rows.push([
-                        data.name,
-                        data.score,
-                        Math.round((data.score / 40) * 100),
-                        data.byRound[1],
-                        data.byRound[2],
-                        data.byRound[3],
-                        data.byRound[4],
-                        data.byRound[5]
-                    ]);
-                });
-
-            const csv = rows.map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
-            const blob = new Blob([csv], {type: 'text/csv'});
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'resultados_' + appState.sessionId + '.csv';
-            a.click();
         }
 
-        // ============= STUDENT FUNCTIONS =============
-        function showStudentQuestion() {
-            const q = QUESTIONS[appState.currentQuestion];
-            const roundData = ROUNDS[q.ronda];
+        function showStudentVoting() {
+            const question = QUESTIONS[currentQuestionIndex];
+            document.getElementById('studentRoundEmoji').textContent = ROUNDS[question.ronda].emoji;
+            document.getElementById('studentRoundName').textContent = ROUNDS[question.ronda].name;
+            document.getElementById('studentQuestionText').textContent = question.pregunta;
 
-            document.getElementById('studentVotingRoundEmoji').textContent = roundData.emoji;
-            document.getElementById('studentVotingRoundName').textContent = roundData.name;
-            document.getElementById('studentQuestionNumber').textContent = `Pregunta ${appState.currentQuestion + 1}/40`;
-            document.getElementById('studentQuestionText').textContent = q.pregunta;
-
-            const optionsHtml = q.opciones.map((opcion, idx) => `
-                <button class="student-option-btn" onclick="studentVote(${idx})">
-                    <span class="student-option-letter">${String.fromCharCode(65 + idx)})</span>
-                    <span class="student-option-text">${opcion}</span>
-                </button>
-            `).join('');
-            document.getElementById('studentOptions').innerHTML = optionsHtml;
-
-            document.getElementById('studentVotedMsg').style.display = 'none';
-        }
-
-        function studentVote(optionIdx) {
-            if (appState.studentVote !== null) return; // Ya votó
-
-            appState.studentVote = optionIdx;
-
-            // Registrar en Firebase
-            const votePath = appState.sessionId + '/votes/' + appState.currentQuestion + '/' + appState.currentUser;
-            db.ref(votePath).set({
-                studentId: appState.currentUser,
-                studentName: appState.studentDisplayName,
-                vote: optionIdx
+            const optionsDiv = document.getElementById('studentOptions');
+            optionsDiv.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            question.opciones.forEach((option, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'student-option-btn';
+                btn.innerHTML = `<span class="student-option-letter">${letters[idx]}</span><span class="student-option-text">${option}</span>`;
+                btn.onclick = () => submitVote(idx);
+                optionsDiv.appendChild(btn);
             });
 
-            // Marcar como votado
-            const buttons = document.querySelectorAll('.student-option-btn');
-            buttons.forEach((btn, idx) => {
-                if (idx === optionIdx) {
+            document.getElementById('studentVotedMessage').style.display = 'none';
+            document.getElementById('studentWaitingMessage').style.display = 'none';
+            document.getElementById('studentResultContent').style.display = 'none';
+
+            showScreen('student-voting');
+            listenForResults();
+        }
+
+        function submitVote(optionIndex) {
+            if (!studentId) return;
+
+            const voteRef = db.ref(`sessions/${sessionId}/responses/${currentQuestionIndex}/${studentId}`);
+            voteRef.set(optionIndex);
+
+            document.querySelectorAll('.student-option-btn').forEach((btn, idx) => {
+                if (idx === optionIndex) {
                     btn.classList.add('voted');
                 } else {
                     btn.classList.add('disabled');
                 }
             });
 
-            document.getElementById('studentVotedMsg').style.display = 'block';
+            document.getElementById('studentVotedMessage').style.display = 'block';
+            document.getElementById('studentOptions').style.display = 'none';
         }
 
-        function showStudentResult() {
-            const q = QUESTIONS[appState.currentQuestion];
-            const isCorrect = appState.studentVote === q.correcta;
-
-            const emoji = document.getElementById('studentResultEmoji');
-            const message = document.getElementById('resultMessage');
-
-            if (isCorrect) {
-                emoji.textContent = '✅';
-                message.textContent = '¡Voto registrado!';
-            } else {
-                emoji.textContent = '📨';
-                message.textContent = '¡Voto registrado!';
-            }
-            // No mostramos si acertó o no — eso lo ve en la pantalla del profesor
+        function updateVoteCount() {
+            const responses = responses[currentQuestionIndex] || {};
+            const count = Object.keys(responses).length;
+            document.getElementById('voteCount').textContent = count;
         }
 
-        function showStudentFinalStats() {
-            const allVotes = appState.allVotes || {};
-            let myScore = 0;
+        function listenForResponses() {
+            if (!isTeacher) return;
 
-            QUESTIONS.forEach((q, idx) => {
-                const vote = allVotes[idx] && allVotes[idx][appState.currentUser];
-                if (vote && vote.vote === q.correcta) {
-                    myScore++;
-                }
+            const responsesRef = db.ref(`sessions/${sessionId}/responses/${currentQuestionIndex}`);
+            responsesRef.on('value', (snapshot) => {
+                responses[currentQuestionIndex] = snapshot.val() || {};
+                updateVoteCount();
+            });
+        }
+
+        function showResults() {
+            listenForResponses();
+
+            const question = QUESTIONS[currentQuestionIndex];
+            const resp = responses[currentQuestionIndex] || {};
+
+            document.getElementById('resultsQuestionText').textContent = question.pregunta;
+
+            const letters = ['A', 'B', 'C', 'D'];
+            const grid = document.getElementById('resultsGrid');
+            grid.innerHTML = '';
+
+            const counts = [0, 0, 0, 0];
+            Object.values(resp).forEach(optionIdx => {
+                if (optionIdx >= 0 && optionIdx < 4) counts[optionIdx]++;
             });
 
-            document.getElementById('studentFinalScore').textContent = myScore;
+            const totalVotes = Object.keys(resp).length;
 
-            const percent = Math.round((myScore / 40) * 100);
-            let message = '';
-            if (percent >= 90) message = '¡Increíble! 🎉';
-            else if (percent >= 70) message = '¡Muy bien! 👏';
-            else if (percent >= 50) message = '¡Buen trabajo! 💪';
-            else message = '¡Sigue practicando! 📚';
+            question.opciones.forEach((option, idx) => {
+                const card = document.createElement('div');
+                card.className = 'result-option' + (idx === question.correcta ? ' correct' : '');
+                const percentage = totalVotes > 0 ? Math.round((counts[idx] / totalVotes) * 100) : 0;
+                const votes = counts[idx];
 
-            document.getElementById('studentFinalMessage').textContent = message;
+                card.innerHTML = `
+                    <div class="result-header">
+                        <span>${letters[idx]}: ${option}</span>
+                        <span class="result-indicator">${idx === question.correcta ? '✓' : ''}</span>
+                    </div>
+                    <div class="result-bar">
+                        <div class="result-bar-fill" style="width: ${percentage}%"></div>
+                    </div>
+                    <div class="result-stats">${votes} respuesta${votes !== 1 ? 's' : ''} (${percentage}%)</div>
+                `;
+                grid.appendChild(card);
+            });
 
-            showScreen('studentFinal');
+            const correctCount = counts[question.correcta];
+            let reaction = '';
+            if (totalVotes === 0) reaction = DON_BALANCE.results.zero;
+            else {
+                const percentage = (correctCount / totalVotes) * 100;
+                if (percentage >= 70) reaction = DON_BALANCE.results.high;
+                else if (percentage >= 40) reaction = DON_BALANCE.results.medium;
+                else reaction = DON_BALANCE.results.low;
+            }
+
+            document.getElementById('donBalanceReaction').textContent = reaction;
+
+            showScreen('results-container');
         }
 
-        // ============= UI HELPERS =============
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            const screen = document.getElementById(screenId);
-            if (screen) screen.classList.add('active');
+        function goBackToQuestion() {
+            showScreen('question-screen');
         }
 
-        // ============= START =============
-        window.addEventListener('DOMContentLoaded', initApp);
+        function goBackToResults() {
+            showScreen('results-container');
+        }
+
+        function listenForResults() {
+            if (isTeacher) return;
+
+            const resultsRef = db.ref(`sessions/${sessionId}/currentQuestion`);
+            resultsRef.once('value', (snapshot) => {
+                const question = QUESTIONS[currentQuestionIndex];
+                const resp = responses[currentQuestionIndex] || {};
+                const studentResponse = resp[studentId];
+
+                if (studentResponse !== undefined) {
+                    const isCorrect = studentResponse === question.correcta;
+                    const resultMsg = document.getElementById('studentResultMessage');
+                    if (isCorrect) {
+                        resultMsg.className = 'student-result-message correct';
+                        resultMsg.textContent = '✅ ¡Correcto!';
+                    } else {
+                        resultMsg.className = 'student-result-message incorrect';
+                        resultMsg.textContent = '❌ Incorrecto';
+                    }
+
+                    document.getElementById('studentExplanationPreview').textContent = question.explicacion;
+                    document.getElementById('studentResultContent').style.display = 'block';
+                    document.getElementById('studentWaitingMessage').style.display = 'none';
+                }
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex >= QUESTIONS.length) {
+                showFinalResults();
+                return;
+            }
+
+            const newRound = QUESTIONS[currentQuestionIndex].ronda;
+            if (newRound !== currentRound) {
+                currentRound = newRound;
+                showRoundTransition();
+            } else {
+                displayTeacherQuestion();
+                broadcastQuestion();
+            }
+        }
+
+        function showFinalResults() {
+            document.getElementById('finalSpeech').textContent = DON_BALANCE.end;
+
+            const rankings = Object.entries(studentData).map(([id, student]) => {
+                let correct = 0;
+                for (let i = 0; i < QUESTIONS.length; i++) {
+                    const resp = responses[i] || {};
+                    if (resp[id] === QUESTIONS[i].correcta) correct++;
+                }
+                return {
+                    id,
+                    name: student.name,
+                    group: student.group,
+                    correct,
+                    percentage: Math.round((correct / QUESTIONS.length) * 100)
+                };
+            }).sort((a, b) => b.correct - a.correct);
+
+            const medals = ['🥇', '🥈', '🥉'];
+            const tbody = document.getElementById('rankingBody');
+            tbody.innerHTML = '';
+            rankings.forEach((student, idx) => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${medals[idx] || (idx + 1)}</td>
+                    <td>${student.name}</td>
+                    <td>${student.group}</td>
+                    <td>${student.correct}</td>
+                    <td>${student.percentage}%</td>
+                `;
+            });
+
+            const totalParticipants = rankings.length;
+            const totalCorrect = rankings.reduce((sum, s) => sum + s.correct, 0);
+            const avgPercentage = totalParticipants > 0 ? Math.round(totalCorrect / (totalParticipants * QUESTIONS.length) * 100) : 0;
+
+            document.getElementById('finalParticipants').textContent = totalParticipants;
+            document.getElementById('finalCorrect').textContent = totalCorrect;
+            document.getElementById('finalPercentage').textContent = avgPercentage + '%';
+
+            const chartContainer = document.getElementById('chartContainer');
+            chartContainer.innerHTML = '';
+            rankings.slice(0, 5).forEach(student => {
+                const barGroup = document.createElement('div');
+                barGroup.className = 'bar-group';
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = (student.percentage * 3) + 'px';
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = student.name.split(',')[0];
+                barGroup.appendChild(bar);
+                barGroup.appendChild(label);
+                chartContainer.appendChild(barGroup);
+            });
+
+            showScreen('final-results-container');
+        }
+
+        function downloadCSV() {
+            const rankings = Object.entries(studentData).map(([id, student]) => {
+                let correct = 0;
+                for (let i = 0; i < QUESTIONS.length; i++) {
+                    const resp = responses[i] || {};
+                    if (resp[id] === QUESTIONS[i].correcta) correct++;
+                }
+                return {
+                    name: student.name,
+                    group: student.group,
+                    correct,
+                    percentage: Math.round((correct / QUESTIONS.length) * 100)
+                };
+            }).sort((a, b) => b.correct - a.correct);
+
+            let csv = 'Nombre,Grupo,Aciertos,Porcentaje\n';
+            rankings.forEach(s => {
+                csv += `"${s.name}",${s.group},${s.correct},${s.percentage}%\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'resultados_reto_contable.csv';
+            link.click();
+        }
+
+        function resetQuiz() {
+            if (confirm('¿Está seguro de que desea reiniciar el reto y eliminar todos los datos?')) {
+                db.ref(`sessions/${sessionId}`).remove().then(() => {
+                    currentQuestionIndex = 0;
+                    currentRound = 1;
+                    responses = {};
+                    studentData = {};
+                    displayStartScreen();
+                });
+            }
+        }
+
+        function displayStartScreen() {
+            showScreen('start-screen');
+        }
+
+        function showScreen(screenName) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.querySelector('.screen.' + screenName).classList.add('active');
+        }
+
+        function showError(elementId, message) {
+            const elem = document.getElementById(elementId);
+            elem.textContent = message;
+            elem.classList.add('show');
+        }
+
+        function showSuccess(elementId, message) {
+            const elem = document.getElementById(elementId);
+            elem.textContent = message;
+            elem.classList.add('show');
+        }
     </script>
 </body>
 </html>
